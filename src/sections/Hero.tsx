@@ -23,7 +23,7 @@ const Hero = () => {
 				</div>
 				<Button className="mt-4">Hire me</Button>
 			</div>
-			<div className="relative w-[420px] m-16 mt-0 pt-32">
+			<div className="relative w-[520px] m-16 mt-0 pt-32">
 				<DiamondImage />
 			</div>
 			<ScrollIndicator />

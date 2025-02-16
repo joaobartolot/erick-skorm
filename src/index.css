@@ -43,6 +43,20 @@
 		}
 	}
 }
+
+.text-outline {
+	color: var(--color-transparent);
+	-webkit-text-fill-color: var(--color-white);
+	-webkit-text-stroke: 1px var(--color-black);
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .text-outline {
+	color: var(--color-black);
+	-webkit-text-fill-color: var(--color-black);
+	-webkit-text-stroke-color: var(--color-text-dark);
+}
+
 @layer base {
 	[data-theme='dark'] {
 		--color-bg: var(--color-bg-dark);

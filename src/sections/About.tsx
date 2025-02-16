@@ -1,3 +1,5 @@
+import Mortarboard from '../assets/icons/Mortarboard.svg?react'
+import Academic from '../assets/images/academic.svg?react'
 import Button from '../components/Button'
 import GifComponent from '../components/GifComponent'
 import Square from '../components/Square'
@@ -6,9 +8,9 @@ const About = () => {
 	return (
 		<section
 			id="about"
-			className="w-full flex justify-center items-center py-8"
+			className="w-full flex flex-col justify-center items-center"
 		>
-			<div className="flex justify-center items-center w-full max-w-7xl">
+			<div className="flex justify-center items-center w-full max-w-7xl py-8">
 				<div className="w-[25%] mx-20 pb-12">
 					<div className="relative rotate-45">
 						<div className="rounded-[10%]  overflow-hidden">
@@ -18,8 +20,8 @@ const About = () => {
 								className="scale-140 -rotate-45"
 							/>
 						</div>
-						<Square className="absolute -bottom-[40px] translate-y-[100%] w-[90%]" />
-						<Square className="absolute left-[40px] -bottom-[50%] translate-x-[100%] w-[95%]" />
+						<Square className="absolute -bottom-[40px] translate-y-[100%] w-[90%] -z-10" />
+						<Square className="absolute left-[40px] -bottom-[50%] translate-x-[100%] w-[95%] -z-10" />
 					</div>
 				</div>
 				<div className="flex flex-col text-start ml-24">
@@ -46,6 +48,38 @@ const About = () => {
 						<Button variant="outline">Download CV</Button>
 					</div>
 				</div>
+			</div>
+
+			<div className="flex justify-center items-center w-full bg-gradient-to-t from-white from-50% to-transparent dark:from-black z-0">
+				<div className="flex flex-col text-start max-w-[400px] text-sm py-8">
+					<div>
+						<Mortarboard className="w-18" />
+					</div>
+					<div className="flex flex-col items-start">
+						<Academic className="h-[48px] w-fit" />
+						<div className="text-6xl font-black">background</div>
+					</div>
+					<div className="mt-4">
+						I hold a Bachelor's degree in Advertising and Propaganda
+						from Universidade Estácio de Sá, based in Rio de
+						Janeiro, where I developed a strong foundation in
+						marketing, communication, and creative strategy. In
+						addition to my undergraduate studies, I pursued an MBA
+						in Business Management and Strategy, which helped me
+						gain a deeper understanding of corporate dynamics,
+						leadership, and strategic planning. Furthermore, I
+						completed a second postgraduate degree in Digital
+						Product Design (UX/UI) at Faculdade Anhanguera,
+						equipping me with advanced skills in user experience and
+						interface design, focused on creating intuitive and
+						impactful digital products.
+					</div>
+				</div>
+				<img
+					src="/images/pencil-guy.png"
+					alt="A classical-style marble statue wearing red sunglasses and holding a red pencil while reading a book, giving a modern and humorous academic aesthetic."
+					className="w-[45%] self-end"
+				/>
 			</div>
 		</section>
 	)

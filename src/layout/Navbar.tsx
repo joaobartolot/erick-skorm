@@ -1,44 +1,14 @@
 import { useEffect, useRef, useState } from 'react'
 import { twJoin } from 'tailwind-merge'
 import Logo from '../assets/images/logo.svg?react'
-import Button from './Button'
-import ThemeToggleButton from './ThemeToggleButton'
+import Button from '../components/Button'
+import ThemeToggleButton from '../components/ThemeToggleButton'
 
-const Header = () => {
+const offset = 80
+
+const Navbar = () => {
 	const [isOpen, setIsOpen] = useState(false)
-	const [frostHeader, setFrostHeader] = useState(false)
 	const headerRef = useRef<HTMLElement>(null)
-	const [offset, setOffset] = useState(60)
-	const [hideFast, setHideFast] = useState(false)
-
-	// Update offset based on screen width
-	useEffect(() => {
-		const updateOffset = () => {
-			const md = window.matchMedia('(min-width: 768px)').matches
-			if (md) {
-				setIsOpen(false)
-				setHideFast(false)
-				setOffset(72)
-				return
-			}
-			setOffset(60)
-			setHideFast(true)
-		}
-
-		updateOffset() // Set initial value
-		window.addEventListener('resize', updateOffset)
-
-		return () => window.removeEventListener('resize', updateOffset)
-	}, [])
-
-	useEffect(() => {
-		window.onscroll = () =>
-			window.scrollY === 0 ? setFrostHeader(false) : setFrostHeader(true)
-
-		return () => {
-			window.onscroll = null
-		}
-	}, [])
 
 	useEffect(() => {
 		if (!isOpen) return
@@ -81,14 +51,11 @@ const Header = () => {
 	}
 
 	return (
-		<header
+		<nav
 			ref={headerRef}
 			className={twJoin(
-				'fixed flex w-full items-center justify-center px-4 py-4 z-30',
-				'md:px-12',
-				!isOpen && hideFast ? 'delay-300' : '',
-				isOpen && hideFast ? '' : 'transition-color duration-300',
-				frostHeader && !isOpen ? 'bg-white/5 backdrop-blur-sm' : ''
+				'fixed flex h-[80px] w-full items-center justify-center px-4 z-30',
+				'md:px-12'
 			)}
 		>
 			<div className="relative flex w-full items-center justify-between">
@@ -112,7 +79,7 @@ const Header = () => {
 					</Button>
 				</div>
 
-				<nav
+				<div
 					className={twJoin(
 						'absolute inset-0 hidden h-full items-center justify-center space-x-12',
 						'md:flex'
@@ -136,10 +103,10 @@ const Header = () => {
 					>
 						Projects
 					</a>
-				</nav>
+				</div>
 			</div>
-		</header>
+		</nav>
 	)
 }
 
-export default Header
+export default Navbar

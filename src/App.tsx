@@ -1,11 +1,14 @@
 import './App.css'
-import Header from './components/Header'
+import Navbar from './layout/Navbar'
+import Hero from './sections/Hero'
 
 function App() {
 	return (
 		<>
-			<Header />
-			<div className="min-h-screen flex items-center justify-center"></div>
+			<Navbar />
+			<main className="overflow-hidden">
+				<Hero />
+			</main>
 		</>
 	)
 }

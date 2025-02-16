@@ -75,11 +75,16 @@ const About = () => {
 						impactful digital products.
 					</div>
 				</div>
-				<img
-					src="/images/pencil-guy.png"
-					alt="A classical-style marble statue wearing red sunglasses and holding a red pencil while reading a book, giving a modern and humorous academic aesthetic."
-					className="w-[45%] self-end"
-				/>
+				<div className="relative w-[45%] self-end">
+					<img
+						src="/images/pencil-guy.png"
+						alt="A classical-style marble statue wearing red sunglasses and holding a red pencil while reading a book, giving a modern and humorous academic aesthetic."
+					/>
+					<img
+						src="/images/diamond.png"
+						className="absolute top-0 right-0 w-16"
+					/>
+				</div>
 			</div>
 		</section>
 	)

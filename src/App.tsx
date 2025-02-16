@@ -1,6 +1,7 @@
 import './App.css'
 import Navbar from './layout/Navbar'
 import About from './sections/About'
+import Experience from './sections/Experience'
 import Hero from './sections/Hero'
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
 			<main className="overflow-hidden">
 				<Hero />
 				<About />
+				<Experience />
 			</main>
 		</>
 	)

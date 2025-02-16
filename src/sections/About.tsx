@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import MortarboardLight from '../assets/icons/Mortarboard-light.svg?react'
 import Mortarboard from '../assets/icons/Mortarboard.svg?react'
 import Academic from '../assets/images/academic.svg?react'
 import Button from '../components/Button'
@@ -54,7 +55,8 @@ const About = () => {
 			<div className="flex justify-center items-center w-full bg-gradient-to-t from-white from-50% to-transparent dark:from-black z-0">
 				<div className="flex flex-col text-start max-w-[400px] text-sm py-8">
 					<div>
-						<Mortarboard className="w-18" />
+						<Mortarboard className="hidden dark:block w-[72px] aspect-square object-cover" />
+						<MortarboardLight className="dark:hidden w-[72px] aspect-square object-cover" />
 					</div>
 					<div className="flex flex-col items-start">
 						<Academic className="h-[48px] w-fit" />

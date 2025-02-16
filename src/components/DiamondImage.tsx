@@ -24,7 +24,7 @@ export default function DiamondImage() {
 					/>
 				</div>
 			</div>
-			<Square className="absolute rounded-[13%] w-[88%] -top-0 -right-0 translate-x-[100%] translate-y-[18%]" />
+			<Square className="absolute rounded-[13%] w-[75%] -top-0 -right-0 translate-x-[100%] translate-y-[30%]" />
 		</div>
 	)
 }

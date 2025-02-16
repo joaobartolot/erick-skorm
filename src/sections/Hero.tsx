@@ -5,17 +5,22 @@ import ScrollIndicator from '../components/ScrollIndicator'
 const Hero = () => {
 	return (
 		<header className="relative flex justify-center items-center h-screen w-full">
-			<div className="text-8xl font-black text-start leading-14">
+			<div className="relative text-8xl font-black text-start leading-14">
 				Designing
 				<br />
 				<span className="text-6xl">with</span>
 				<br />
 				purpose,
 				<br />
-				<span className="text-4xl text-primary">
+				<img
+					src="/animations/spinning-diamond.gif"
+					alt="Spinning diamond"
+					className="absolute right-28 top-6"
+				/>
+				<span className="text-4xl text-primary text-[39px]">
 					creating with passion
 				</span>
-				<div className="text-base max-w-md mt-4">
+				<div className="font-normal text-base max-w-md mt-4">
 					Bringing clarity and creativity to every project. I focus on
 					crafting impactful, functional designs that not only
 					captivate but also solve real problems. Each design is

@@ -1,4 +1,5 @@
 import Button from '../components/Button'
+import GifComponent from '../components/GifComponent'
 import Square from '../components/Square'
 
 const About = () => {
@@ -22,15 +23,16 @@ const About = () => {
 					</div>
 				</div>
 				<div className="flex flex-col text-start ml-24">
-					<div className="text-3xl font-black border-b-4 border-primary">
+					<div className="text-3xl font-black">
 						About
+						<GifComponent gifPath="/animations/line.gif" />
 					</div>
 					<div className="text-6xl font-black">
 						Hey,
 						<br />
 						What’s up?
 					</div>
-					<div className="text-primary font-thin text-3xl my-2">
+					<div className="text-primary font-medium text-[28px] my-2 w-full">
 						Let me introduce myself.
 					</div>
 					<div className="text-base max-w-[300px]">

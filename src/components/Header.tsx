@@ -99,10 +99,10 @@ const Header = () => {
 						'md:static md:w-fit'
 					)}
 				>
-					<Logo className="w-32 h-fit" />
+					<Logo className="w-24 h-fit" />
 				</div>
 
-				<div className="flex space-x-3 z-50">
+				<div className="flex space-x-4 z-50">
 					<ThemeToggleButton />
 					<Button
 						onClick={() => scrollToElement('contact')}

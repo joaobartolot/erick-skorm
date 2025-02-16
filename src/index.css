@@ -1,4 +1,5 @@
 @import 'tailwindcss';
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
 @theme {
 	--color-primary: #f23846;
@@ -14,10 +15,6 @@
 	/* Dark mode */
 	--color-bg-dark: #181818;
 	--color-text-dark: #f6f6f6;
-
-	/* Default colors (these will be updated dynamically in JS) */
-	--color-bg: var(--color-bg-light);
-	--color-text: var(--color-text-light);
 
 	--font-body: 'DMSans', 'sans';
 
@@ -46,6 +43,16 @@
 		}
 	}
 }
+@layer base {
+	[data-theme='dark'] {
+		--color-bg: var(--color-bg-dark);
+		--color-text: var(--color-text-dark);
+	}
+	[data-theme='light'] {
+		--color-bg: var(--color-bg-light);
+		--color-text: var(--color-text-light);
+	}
+}
 
 :root {
 	color-scheme: light dark;
@@ -60,13 +67,6 @@
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-}
-
-@media (prefers-color-scheme: dark) {
-	:root {
-		--color-bg: var(--color-bg-dark);
-		--color-text: var(--color-text-dark);
-	}
 }
 
 body {

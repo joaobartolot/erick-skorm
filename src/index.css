@@ -54,6 +54,7 @@
 	transition:
 		background-color 0.3s,
 		color 0.3s;
+	font-family: var(--font-body);
 
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -72,6 +73,10 @@ body {
 	margin: 0;
 	min-width: 320px;
 	min-height: 100vh;
+}
+
+a:hover {
+	color: var(--color-primary);
 }
 
 @font-face {

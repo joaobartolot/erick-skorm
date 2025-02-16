@@ -1,4 +1,6 @@
 import { useEffect, useState } from 'react'
+import Moon from '../assets/icons/moon.svg?react'
+import Sun from '../assets/icons/sun.svg?react'
 
 export default function ThemeToggleButton() {
 	const [theme, setTheme] = useState(() => {
@@ -36,11 +38,12 @@ export default function ThemeToggleButton() {
 	}
 
 	return (
-		<button
-			onClick={toggleTheme}
-			className="p-2 rounded-lg border border-gray-300 bg-[var(--color-bg)] text-[var(--color-text)] hover:bg-opacity-80 transition"
-		>
-			{theme === 'dark' ? '🌙 Dark Mode' : '☀️ Light Mode'}
+		<button onClick={toggleTheme}>
+			{theme === 'dark' ? (
+				<Sun className="w-10 aspect-square" />
+			) : (
+				<Moon className="w-10 aspect-square" />
+			)}
 		</button>
 	)
 }

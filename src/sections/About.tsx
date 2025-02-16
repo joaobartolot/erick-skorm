@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion'
 import Mortarboard from '../assets/icons/Mortarboard.svg?react'
 import Academic from '../assets/images/academic.svg?react'
 import Button from '../components/Button'
@@ -76,7 +77,16 @@ const About = () => {
 					</div>
 				</div>
 				<div className="relative w-[45%] self-end">
-					<img
+					<motion.img
+						initial={{
+							opacity: 0,
+							y: 20,
+						}}
+						animate={{
+							opacity: 1,
+							y: 0,
+						}}
+						transition={{ duration: 0.5, ease: 'easeInOut' }}
 						src="/images/pencil-guy.png"
 						alt="A classical-style marble statue wearing red sunglasses and holding a red pencil while reading a book, giving a modern and humorous academic aesthetic."
 					/>

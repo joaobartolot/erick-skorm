@@ -1,7 +1,9 @@
 import { useEffect, useRef, useState } from 'react'
 import { twJoin } from 'tailwind-merge'
 import AnimatedStroke from '../components/AnimatedStroke'
+import ExperienceCard from '../components/ExperienceCard'
 import MarqueeTools from '../components/MarqueeTools'
+import { experiences } from '../data/experience'
 
 const Experience = () => {
 	const [trigger, setTrigger] = useState(false)
@@ -27,11 +29,7 @@ const Experience = () => {
 	}, [])
 
 	return (
-		<section
-			id="experience"
-			ref={sectionRef}
-			className="relative w-full h-screen"
-		>
+		<section id="experience" ref={sectionRef} className="relative w-full">
 			<div
 				className={twJoin(
 					'absolute top-0 -translate-y-[50%] -translate-x-[5%] w-[110%] pt-4 -rotate-3',
@@ -64,6 +62,20 @@ const Experience = () => {
 					</div>
 					<div className="w-full h-[1px] mx-6 bg-primary dark:bg-primary" />
 					<img src="/icons/profiles.png" alt="" className="w-12" />
+				</div>
+				<div className="flex gap-4">
+					{experiences.map((exp, index) => (
+						<ExperienceCard key={index} {...exp} />
+					))}
+				</div>
+				<div className="max-w-7xl px-6 my-12">
+					In recent years, I’ve taken on various roles combining
+					communication and technology. I worked as Customer Support
+					for Facebook, assisting small and medium-sized businesses
+					with paid traffic. I also served as Marketing Manager for a
+					UK-based cosmetics company. Currently, I work as a Content
+					Analyst for the world's largest video platform while
+					continuing to take on freelance design projects.
 				</div>
 			</div>
 		</section>

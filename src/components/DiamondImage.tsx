@@ -4,7 +4,7 @@ import Square from './Square'
 export default function DiamondImage() {
 	return (
 		<div className="relative -rotate-45">
-			<div className="p-[18%] pb-0 pl-0 overflow-hidden">
+			<div className="p-[18%] pb-0 pl-0 rounded-[13%] overflow-hidden">
 				<div className="relative aspect-square rounded-[13%] bg-primary">
 					<motion.img
 						initial={{
@@ -17,6 +17,9 @@ export default function DiamondImage() {
 							x: 0,
 							y: 0,
 						}}
+						width="400"
+						height="400"
+						loading="lazy"
 						transition={{ duration: 0.5, ease: 'easeInOut' }}
 						src="/images/macbook-guy.png"
 						alt="A classical marble statue of a man with curly hair, wearing modern red sunglasses and using a silver MacBook laptop. The statue has a thoughtful expression, with one hand raised as if making a point. The background is removed, creating a sleek, modern contrast between antiquity and technology."

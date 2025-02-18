@@ -105,9 +105,15 @@ const ProjectGrid = () => {
 				>
 					<div
 						className={twJoin(
+							'absolute inset-0 opacity-50',
+							'dark:bg-black bg-white -z-0'
+						)}
+					/>
+					<div
+						className={twJoin(
 							'flex justify-center items-center gap-2',
 							'text-lg font-black leading-4 text-start text-wrap balance whitespace-normal',
-							'text-primary dark:text-white my-6'
+							'text-primary dark:text-white my-6 z-10'
 						)}
 					>
 						<img
@@ -136,9 +142,9 @@ const ProjectGrid = () => {
 						width={500}
 						height={700}
 						loading="lazy"
-						className="px-6 md:px-0"
+						className="px-6 md:px-0 z-10"
 					/>
-					<div className="my-6">
+					<div className="my-6 z-10">
 						<Button variant="primary">Check It Out</Button>
 					</div>
 				</div>

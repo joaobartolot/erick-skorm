@@ -46,6 +46,7 @@ export const projects = [
 	{
 		id: 6,
 		primaryImage: '/images/bartolot-portfolio.png',
+		imageClass: 'w-full',
 		backgroundClass: 'bg-[#f23846] dark:bg-[#f23846]',
 		tools: {
 			icons: ['/icons/photoshop.png'],

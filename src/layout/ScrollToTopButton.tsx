@@ -33,7 +33,7 @@ const ScrollToTopButton = () => {
 			variants={variants}
 			animate={position}
 			transition={{ duration: 0.2, ease: 'easeIn' }}
-			className="fixed md:hidden bottom-5 right-5 rounded-4xl z-50"
+			className="fixed md:hidden bottom-5 right-5 rounded-md z-50 overflow-hidden"
 			onClick={() => window.scrollTo(0, 0)}
 		>
 			<img

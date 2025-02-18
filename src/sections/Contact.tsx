@@ -36,9 +36,9 @@ const Contact = () => {
 			data-section
 			className="relative flex justify-center w-full"
 		>
-			<div className="w-full max-w-7xl py-24 z-10 pointer-events-none">
-				<div className="flex flex-col w-fit pointer-events-auto">
-					<div className="text-3xl font-black leading-0 text-start w-fit text-white dark:text-white">
+			<div className="w-full max-w-7xl py-12 pb-32 z-10 pointer-events-none px-6">
+				<div className="flex flex-col w-full pointer-events-none">
+					<div className="flex flex-col items-center md:items-start text-2xl md:text-3xl font-black leading-0 text-center md:text-start w-full md:w-fit text-white dark:text-white">
 						Contact
 						<AnimatedStroke
 							className="w-32 text-primary dark:text-primary"
@@ -46,8 +46,8 @@ const Contact = () => {
 							trigger={trigger}
 						/>
 					</div>
-					<div className="flex flex-col text-start text-xl my-6 gap-4 text-white dark:text-white">
-						<div className="flex flex-col gap-2">
+					<div className="flex flex-col text-start text-xl my-6 gap-4 text-white dark:text-white pointer-events-auto">
+						<div className="flex flex-col items-center md:items-start gap-2">
 							<a
 								href="mailto:erickolivers93@gmail.com"
 								className="flex items-center gap-2 hover:underline hover:text-white w-fit"
@@ -55,7 +55,7 @@ const Contact = () => {
 								<img
 									src="/icons/email.png"
 									alt="Gmail logo"
-									className="h-6"
+									className="h-6 hidden md:block"
 								/>
 								erickolivers93@gmail.com
 							</a>
@@ -68,22 +68,27 @@ const Contact = () => {
 								<img
 									src="/icons/whatsapp.png"
 									alt="WhatsApp logo"
-									className="h-6"
+									className="h-6 hidden md:block"
 								/>
 								+351 910 485 214
 							</a>
 						</div>
 					</div>
 
-					<div className="border border-light-gray dark:border-white max-w-xl text-start p-6 bg-white dark:bg-white rounded-2xl">
-						<div className="text-3xl font-black dark:text-black">
+					<div
+						className={twJoin(
+							'relative border border-light-gray w-full max-w-xl',
+							'text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
+						)}
+					>
+						<div className="text-xl md:text-3xl font-black dark:text-black">
 							Ready to Bring <br />
 							<span className="text-primary dark:text-primary">
 								Ideas
 							</span>{' '}
 							to Life?
 						</div>
-						<div className="w-[90%] my-1 dark:text-black">
+						<div className="w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base">
 							Send me a message, and let’s talk about your project
 							or proposal. I’d love to chat!
 							<span className="text-primary dark:text-primary">
@@ -91,7 +96,7 @@ const Contact = () => {
 								If you’re around, let’s grab a coffee.
 							</span>
 						</div>
-						<form className="w-full mt-4 space-y-8">
+						<form className="w-full mt-4 space-y-8 ">
 							<FloatingInput label="Name" id="name" />
 							<FloatingInput label="Surname" id="surname" />
 							<FloatingInput
@@ -108,13 +113,29 @@ const Contact = () => {
 								<Button type="submit">Send</Button>
 							</div>
 						</form>
+
+						{showSocials && (
+							<div
+								className={twJoin(
+									'md:hidden absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
+									'w-fit pt-6 z-40 pointer-events-auto'
+								)}
+							>
+								<div className="text-nowrap text-2xl font-black">
+									Let’s Get Social!
+								</div>
+								<div className="w-full">
+									<SocialIcons />
+								</div>
+							</div>
+						)}
 					</div>
 				</div>
 			</div>
 
 			{/* Background Image */}
 			<div
-				className="absolute bg-center top-0 w-full h-[70%] z-0"
+				className="absolute bg-center top-0 w-full h-[30%] md:h-[70%] z-0"
 				style={{
 					backgroundImage: `url(/images/contact-bg.png)`,
 					backgroundSize: 'cover',
@@ -130,7 +151,7 @@ const Contact = () => {
 					onLoad={() => setBgLoaded(true)}
 				/>
 
-				<div className="relative w-full h-full">
+				<div className="hidden md:block relative w-full h-full">
 					<div className="absolute bottom-0 right-12 h-[70%]">
 						<div className="relative h-full">
 							{/* Phone Guy Image */}

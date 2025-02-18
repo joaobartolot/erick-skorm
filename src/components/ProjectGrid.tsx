@@ -42,9 +42,10 @@ const ProjectGrid = () => {
 									alt="Tools icons"
 									width={36}
 									height={36}
+									className="w-6"
 								/>
 							))}
-							<div>
+							<div className="text-xs">
 								<div>{project.tools.toolPrimary}</div>
 								<div>{project.tools.toolSecondary}</div>
 							</div>
@@ -114,16 +115,16 @@ const ProjectGrid = () => {
 							alt="Tools icons"
 							width={36}
 							height={36}
-							className="hidden dark:block"
+							className="hidden dark:block w-6"
 						/>
 						<img
 							src="/icons/figma-primary.png"
 							alt="Tools icons"
 							width={36}
 							height={36}
-							className="dark:hidden"
+							className="dark:hidden w-6"
 						/>
-						<div>
+						<div className="text-xs">
 							<div>Landing Page</div>
 							<div>UX/UI</div>
 						</div>
@@ -134,6 +135,8 @@ const ProjectGrid = () => {
 						alt=""
 						width={500}
 						height={700}
+						loading="lazy"
+						className="px-6 md:px-0"
 					/>
 					<div className="my-6">
 						<Button variant="primary">Check It Out</Button>

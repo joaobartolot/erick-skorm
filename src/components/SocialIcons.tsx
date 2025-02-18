@@ -9,7 +9,7 @@ interface SocialIcon {
 
 const icons: SocialIcon[] = [
 	{ href: 'https://www.instagram.com/erickskorm/', name: 'instagram' },
-	{ href: 'http://', name: 'x' },
+	{ href: 'https://x.com/_skorm', name: 'x' },
 	{ href: 'https://linkedin.com/in/erick-silva-b393a515a', name: 'linkedin' },
 	{ href: 'https://behance.net/erickskorm', name: 'behance' },
 ]

@@ -36,8 +36,9 @@ const ProjectGrid = () => {
 									: 'text-white dark:text-white'
 							)}
 						>
-							{project.tools.icons.map(icon => (
+							{project.tools.icons.map((icon, index) => (
 								<img
+									key={index}
 									src={icon}
 									alt="Tools icons"
 									width={36}

@@ -14,7 +14,7 @@ const ExperienceCard = ({
 	description,
 }: ExperienceProps) => {
 	return (
-		<div className="border-2 border-primary p-6 w-[350px] rounded-lg">
+		<div className="border-2 border-primary p-6 w-[370px] h-[370px] rounded-lg">
 			<div className="flex flex-col space-y-6">
 				<div className="flex space-x-6">
 					<img

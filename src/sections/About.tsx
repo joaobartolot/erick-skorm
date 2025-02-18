@@ -4,7 +4,7 @@ import MortarboardLight from '../assets/icons/Mortarboard-light.svg?react'
 import Mortarboard from '../assets/icons/Mortarboard.svg?react'
 import Academic from '../assets/images/academic.svg?react'
 import AnimatedStroke from '../components/AnimatedStroke'
-import Button from '../components/Button'
+import DownloadCV from '../components/DownloadCV'
 import Square from '../components/Square'
 
 const About = () => {
@@ -90,7 +90,7 @@ const About = () => {
 						can with the world around me.
 					</div>
 					<div className="flex justify-center md:justify-start my-4">
-						<Button variant="outline">Download CV</Button>
+						<DownloadCV />
 					</div>
 				</div>
 			</div>

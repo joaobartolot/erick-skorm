@@ -1,13 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
+import { Swiper as SwiperCore } from 'swiper'
+import { Swiper, SwiperSlide } from 'swiper/react'
 import { twJoin } from 'tailwind-merge'
 import AnimatedStroke from '../components/AnimatedStroke'
 import ExperienceCard from '../components/ExperienceCard'
 import MarqueeTools from '../components/MarqueeTools'
+import Pagination from '../components/Pagination'
 import { experiences } from '../data/experience'
 
 const Experience = () => {
 	const [trigger, setTrigger] = useState(false)
+	const [activeIndex, setActiveIndex] = useState(0)
 	const sectionRef = useRef<HTMLDivElement | null>(null)
+	const swiperRef = useRef<SwiperCore | null>(null)
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -70,11 +75,44 @@ const Experience = () => {
 						className="hidden md:block w-12"
 					/>
 				</div>
-				<div className="flex gap-4">
-					{experiences.map((exp, index) => (
-						<ExperienceCard key={index} {...exp} />
+
+				<Swiper
+					loop
+					onSwiper={swiper => (swiperRef.current = swiper)}
+					onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
+					breakpoints={{
+						640: {
+							slidesPerView: 1,
+						},
+						768: {
+							slidesPerView: 2,
+						},
+						1024: {
+							slidesPerView: 3,
+						},
+					}}
+					className="w-full max-w-7xl"
+				>
+					{experiences.map((experience, index) => (
+						<SwiperSlide
+							key={index}
+							className="flex justify-center items-center"
+						>
+							<div className="flex justify-center items-center w-full">
+								<ExperienceCard {...experience} />
+							</div>
+						</SwiperSlide>
 					))}
-				</div>
+				</Swiper>
+
+				{/* Clickable Pagination */}
+				<Pagination
+					length={experiences.length}
+					activeIndex={activeIndex}
+					onChange={index => swiperRef.current?.slideToLoop(index)}
+					className="mt-8"
+				/>
+
 				<div className="max-w-7xl px-6 my-12">
 					In recent years, I’ve taken on various roles combining
 					communication and technology. I worked as Customer Support

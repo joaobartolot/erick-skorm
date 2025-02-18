@@ -11,7 +11,7 @@ export const projects = [
 		},
 	},
 	{
-		id: 3,
+		id: 2,
 		primaryImage: '/images/ysl.png',
 		imageClass: 'w-full',
 		secondaryImage: '/images/ysl-secondary.png',
@@ -22,7 +22,7 @@ export const projects = [
 		},
 	},
 	{
-		id: 4,
+		id: 3,
 		primaryImage: '/images/palato-nobre.png',
 		backgroundClass: 'bg-[#75462e] dark:bg-[#75462e]',
 		secondaryImage: '/images/palato-nobre-secondary.png',
@@ -33,7 +33,7 @@ export const projects = [
 		},
 	},
 	{
-		id: 5,
+		id: 4,
 		primaryImage: '/images/book.png',
 		imageClass: 'w-full',
 		secondaryImage: '/images/book-secondary.png',
@@ -44,7 +44,7 @@ export const projects = [
 		},
 	},
 	{
-		id: 6,
+		id: 5,
 		primaryImage: '/images/bartolot-portfolio.png',
 		imageClass: 'w-full',
 		backgroundClass: 'bg-[#f23846] dark:bg-[#f23846]',

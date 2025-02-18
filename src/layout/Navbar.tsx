@@ -146,7 +146,7 @@ const Navbar = () => {
 					<ThemeToggleButton />
 					<Button
 						onClick={() => scrollToElement('contact')}
-						className="text-xs md:text-base px-4 py-2 md:px-4 md:py-3"
+						className="hidden md:block text-xs md:text-base px-4 py-2 md:px-4 md:py-3"
 					>
 						Hire me
 					</Button>

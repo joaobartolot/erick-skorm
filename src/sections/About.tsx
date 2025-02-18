@@ -14,13 +14,13 @@ const About = () => {
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				if (entry.intersectionRatio >= 0.7) {
+				if (entry.intersectionRatio >= 0.6) {
 					setTrigger(true)
 				} else {
 					setTrigger(false)
 				}
 			},
-			{ threshold: 0.7 }
+			{ threshold: 0.6 }
 		)
 
 		if (sectionRef.current) {
@@ -33,14 +33,23 @@ const About = () => {
 	return (
 		<section
 			id="about"
-			className="w-full flex flex-col justify-center items-center"
+			className="w-full flex flex-col justify-center items-center pt-32"
 			data-section
 		>
-			<div
-				ref={sectionRef}
-				className="flex justify-center items-center w-full max-w-7xl py-8"
-			>
-				<div className="aspect-square mx-20 pb-12">
+			<div className="flex flex-col md:flex-row justify-center items-center w-full max-w-7xl py-8">
+				<div className="md:hidden text-3xl font-black leading-0 text-start w-fit">
+					About
+					<AnimatedStroke
+						className="w-24 stroke-4 text-primary dark:text-primary"
+						strokeWidth={6}
+						trigger={trigger}
+					/>
+				</div>
+
+				<div
+					ref={sectionRef}
+					className="aspect-square m-20 md:my-0 pb-12"
+				>
 					<div className="relative aspect-square rotate-45">
 						<div className="rounded-[10%]  overflow-hidden">
 							<img
@@ -52,12 +61,12 @@ const About = () => {
 								className="scale-140 -rotate-45"
 							/>
 						</div>
-						<Square className="absolute -bottom-[40px] translate-y-[100%] w-[100%] -z-10" />
-						<Square className="absolute -right-[40px] -bottom-[50%] translate-x-[100%] w-[100%] -z-10" />
+						<Square className="hidden md:block absolute -bottom-[40px] translate-y-[100%] w-[100%] -z-10" />
+						<Square className="hidden md:block absolute -right-[40px] -bottom-[50%] translate-x-[100%] w-[100%] -z-10" />
 					</div>
 				</div>
-				<div className="flex flex-col text-start ml-24">
-					<div className="text-3xl font-black leading-0 text-start w-fit">
+				<div className="flex flex-col text-center md:text-start md:ml-24 px-6">
+					<div className="hidden md:block text-3xl font-black leading-0 text-start w-fit">
 						About
 						<AnimatedStroke
 							className="w-24 stroke-4 text-primary dark:text-primary"
@@ -73,24 +82,24 @@ const About = () => {
 					<div className="text-primary font-medium text-[28px] my-2 w-full">
 						Let me introduce myself.
 					</div>
-					<div className="text-base max-w-[300px]">
+					<div className="text-base max-w-[300px] py-4">
 						My name is Erick Silva, also known as Skorm. I’m
 						Brazilian, currently based in Lisbon, and always seeking
 						new experiences and challenges. Whether in my work or
 						personal life, my mission is to learn and share what I
 						can with the world around me.
 					</div>
-					<div className="my-4">
+					<div className="flex justify-center md:justify-start my-4">
 						<Button variant="outline">Download CV</Button>
 					</div>
 				</div>
 			</div>
 
-			<div className="flex justify-center items-center w-full bg-gradient-to-t from-white from-50% to-transparent dark:from-black z-0">
-				<div className="flex flex-col text-start max-w-[400px] text-sm py-8">
+			<div className="flex flex-col md:flex-row justify-center items-center w-full bg-gradient-to-t from-white from-50% to-transparent dark:from-black z-0">
+				<div className="flex flex-col items-center md:items-start text-center md:text-start max-w-[400px] text-sm px-6 py-8">
 					<Mortarboard className="hidden dark:block w-[72px] h-[72px] aspect-square object-cover" />
 					<MortarboardLight className="dark:hidden w-[72px] h-[72px] aspect-square object-cover" />
-					<div className="flex flex-col items-start">
+					<div className="flex flex-col items-center md:items-start">
 						<Academic className="h-[48px] w-fit" />
 						<div className="text-6xl font-black">background</div>
 					</div>

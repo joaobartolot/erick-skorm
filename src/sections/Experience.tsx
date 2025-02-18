@@ -33,16 +33,13 @@ const Experience = () => {
 			<div
 				className={twJoin(
 					'absolute top-0 -translate-y-[50%] -translate-x-[5%] w-[110%] pt-4 -rotate-3',
-					'bg-gradient-to-t from-black/60 from-80% to-transparent dark:from-black '
+					'bg-gradient-to-t from-black/60 from-70% md:from-80% to-transparent dark:from-black '
 				)}
 			>
 				<MarqueeTools />
 			</div>
 
-			<div
-				ref={sectionRef}
-				className="flex flex-col justify-center items-center pt-24 w-full"
-			>
+			<div className="flex flex-col justify-center items-center pt-24 w-full">
 				<div className="text-3xl font-black w-fit leading-0">
 					Experience
 					<AnimatedStroke
@@ -50,7 +47,10 @@ const Experience = () => {
 						trigger={trigger}
 					/>
 				</div>
-				<div className="max-w-prose text-start mt-8">
+				<div
+					ref={sectionRef}
+					className="max-w-prose text-center md:text-start mt-8 px-6 md:px-0"
+				>
 					With years of experience as an Art Director in advertising
 					agencies, I have crafted campaigns, developed brands, and
 					created compelling visuals. I’ve worked in Marketing,
@@ -59,12 +59,16 @@ const Experience = () => {
 					UI Designer, continuously growing and evolving in the field.
 				</div>
 
-				<div className="flex justify-between items-center w-full max-w-7xl my-24">
-					<div className="p-2 rounded-lg w-fit h-fit whitespace-nowrap bg-primary dark:bg-primary text-white dark:text-white">
+				<div className="flex justify-center md:justify-between items-center w-full max-w-7xl mb-12 my-24">
+					<div className="p-4 md:p-2 rounded-lg w-fit h-fit text-xl md:text-base font-black md:font-normal whitespace-nowrap bg-primary dark:bg-primary text-white dark:text-white">
 						Latest experiences
 					</div>
-					<div className="w-full h-[1px] mx-6 bg-primary dark:bg-primary" />
-					<img src="/icons/profiles.png" alt="" className="w-12" />
+					<div className="hidden md:block w-full h-[1px] mx-6 bg-primary dark:bg-primary" />
+					<img
+						src="/icons/profiles.png"
+						alt=""
+						className="hidden md:block w-12"
+					/>
 				</div>
 				<div className="flex gap-4">
 					{experiences.map((exp, index) => (

@@ -19,7 +19,7 @@ const ProjectGrid = () => {
 						className={twJoin(
 							'relative flex justify-center items-center md:border-2 border-primary md:rounded-lg overflow-hidden',
 							project.secondaryImage
-								? 'w-full'
+								? 'w-full min-h-[300px]'
 								: 'flex-col w-full h-fit',
 							project.backgroundClass
 						)}

@@ -15,14 +15,14 @@ const MarqueeTools = () => {
 		<Marquee
 			autoFill
 			speed={30}
-			className="bg-primary dark:bg-primary h-[80px]"
+			className="bg-primary dark:bg-primary h-[60px] md:h-[80px]"
 		>
 			{tools.map((tool, index) => (
 				<img
 					key={index}
 					src={tool.src}
 					alt={tool.alt}
-					className="w-10 mx-24"
+					className="w-6 md:w-10 mx-8 md:mx-24"
 				/>
 			))}
 		</Marquee>

@@ -27,6 +27,8 @@ export default function DiamondImage() {
 					/>
 				</div>
 			</div>
+			<Square className="md:hidden absolute -left-8 bottom-0 w-[75%] -translate-x-[100%]" />
+			<Square className="md:hidden absolute -bottom-8 w-[75%] translate-y-[100%] border-primary dark:border-primary" />
 			<Square className="absolute rounded-[13%] w-[75%] -top-0 -right-0 translate-x-[100%] translate-y-[30%]" />
 		</div>
 	)

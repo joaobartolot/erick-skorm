@@ -94,10 +94,6 @@ body {
 	min-height: 100vh;
 }
 
-a:hover {
-	color: var(--color-primary);
-}
-
 @font-face {
 	font-family: 'DMSans';
 	font-style: normal;

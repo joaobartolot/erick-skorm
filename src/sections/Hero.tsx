@@ -2,7 +2,24 @@ import Button from '../components/Button'
 import DiamondImage from '../components/DiamondImage'
 import ScrollIndicator from '../components/ScrollIndicator'
 
+const offset = 80
+
 const Hero = () => {
+	const scrollToElement = (sectionId: string) => {
+		const sectionElement = document.getElementById(sectionId)
+		if (sectionElement) {
+			const sectionPosition =
+				sectionElement.getBoundingClientRect().top +
+				window.scrollY -
+				offset
+
+			window.scrollTo({
+				top: sectionPosition,
+				behavior: 'smooth',
+			})
+		}
+	}
+
 	return (
 		<header
 			id="hero"
@@ -30,7 +47,12 @@ const Hero = () => {
 					captivate but also solve real problems. Each design is
 					driven by intention and fueled by passion.
 				</div>
-				<Button className="mt-4">Hire me</Button>
+				<Button
+					onClick={() => scrollToElement('contact')}
+					className="mt-4"
+				>
+					Hire me
+				</Button>
 			</div>
 			<div className="relative w-[520px] m-[2%] mt-0">
 				<DiamondImage />

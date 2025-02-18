@@ -13,7 +13,6 @@ const Navbar = () => {
 	const headerRef = useRef<HTMLElement>(null)
 	const [hideFast, setHideFast] = useState(false)
 
-	// Update offset based on screen width
 	useEffect(() => {
 		const updateOffset = () => {
 			const md = window.matchMedia('(min-width: 768px)').matches
@@ -87,6 +86,7 @@ const Navbar = () => {
 			})
 		}
 	}
+
 	const handleAnchorClick = (
 		event: React.MouseEvent<HTMLAnchorElement>,
 		sectionId: string
@@ -161,27 +161,30 @@ const Navbar = () => {
 					<a
 						href="#about"
 						onClick={e => handleAnchorClick(e, 'about')}
+						className="hover:text-primary transition-colors"
 					>
 						About
 					</a>
 					<a
 						href="#experience"
 						onClick={e => handleAnchorClick(e, 'experience')}
+						className="hover:text-primary transition-colors"
 					>
 						Experience
 					</a>
 					<a
 						href="#projects"
 						onClick={e => handleAnchorClick(e, 'projects')}
+						className="hover:text-primary transition-colors"
 					>
 						Projects
 					</a>
 				</nav>
 			</div>
 			<motion.nav
-				initial={{ x: '-100%' }} // Start completely off-screen to the left
-				animate={{ x: isOpen ? 0 : '-100%' }} // Slide in to `left-0`
-				exit={{ x: '-100%' }} // Slide out when closed
+				initial={{ x: '-100%' }}
+				animate={{ x: isOpen ? 0 : '-100%' }}
+				exit={{ x: '-100%' }}
 				transition={{
 					type: 'tween',
 					duration: 0.4,
@@ -192,18 +195,24 @@ const Navbar = () => {
 					'z-40 flex flex-col items-start space-y-6 py-24 pl-4 pr-24 rounded-br-[30px]'
 				)}
 			>
-				<a href="#about" onClick={e => handleAnchorClick(e, 'about')}>
+				<a
+					href="#about"
+					onClick={e => handleAnchorClick(e, 'about')}
+					className="hover:text-primary transition-colors"
+				>
 					About
 				</a>
 				<a
 					href="#experience"
 					onClick={e => handleAnchorClick(e, 'experience')}
+					className="hover:text-primary transition-colors"
 				>
 					Experience
 				</a>
 				<a
 					href="#projects"
 					onClick={e => handleAnchorClick(e, 'projects')}
+					className="hover:text-primary transition-colors"
 				>
 					Projects
 				</a>

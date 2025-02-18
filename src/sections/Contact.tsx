@@ -36,73 +36,79 @@ const Contact = () => {
 			data-section
 			className="relative flex justify-center w-full"
 		>
-			<div className="flex flex-col w-full max-w-7xl py-24 z-10">
-				<div className="text-3xl font-black leading-0 text-start w-fit text-white dark:text-white">
-					Contact
-					<AnimatedStroke
-						className="w-32 text-primary dark:text-primary"
-						strokeWidth={5}
-						trigger={trigger}
-					/>
-				</div>
-				<div className="flex flex-col text-start text-xl my-6 gap-4 text-white dark:text-white">
-					<div className="flex flex-col gap-2">
-						<a
-							href="mailto:erickolivers93@gmail.com"
-							className="flex items-center gap-2 hover:underline hover:text-white w-fit"
-						>
-							<img
-								src="/icons/email.png"
-								alt="Gmail logo"
-								className="h-6"
-							/>
-							erickolivers93@gmail.com
-						</a>
-						<a
-							href="https://wa.me/351910485214"
-							target="_blank"
-							rel="noopener noreferrer"
-							className="flex items-center gap-2 hover:underline hover:text-white w-fit"
-						>
-							<img
-								src="/icons/whatsapp.png"
-								alt="WhatsApp logo"
-								className="h-6"
-							/>
-							+351 910 485 214
-						</a>
-					</div>
-				</div>
-
-				<div className="border border-light-gray dark:border-white max-w-xl text-start p-6 bg-white dark:bg-white rounded-2xl">
-					<div className="text-3xl font-black dark:text-black">
-						Ready to Bring <br />
-						<span className="text-primary dark:text-primary">
-							Ideas
-						</span>{' '}
-						to Life?
-					</div>
-					<div className="w-[90%] my-1 dark:text-black">
-						Send me a message, and let’s talk about your project or
-						proposal. I’d love to chat!
-						<span className="text-primary dark:text-primary">
-							{' '}
-							If you’re around, let’s grab a coffee.
-						</span>
-					</div>
-					<form className="w-full mt-4 space-y-8">
-						<FloatingInput label="Name" id="name" />
-						<FloatingInput label="Surname" id="surname" />
-						<FloatingInput label="Email" id="email" type="email" />
-						<FloatingInput
-							label="Message"
-							id="message"
-							type="textarea"
+			<div className="w-full max-w-7xl py-24 z-10 pointer-events-none">
+				<div className="flex flex-col w-fit pointer-events-auto">
+					<div className="text-3xl font-black leading-0 text-start w-fit text-white dark:text-white">
+						Contact
+						<AnimatedStroke
+							className="w-32 text-primary dark:text-primary"
+							strokeWidth={5}
+							trigger={trigger}
 						/>
-						<div className="flex justify-center items-center">
-							<Button type="submit">Send</Button>
+					</div>
+					<div className="flex flex-col text-start text-xl my-6 gap-4 text-white dark:text-white">
+						<div className="flex flex-col gap-2">
+							<a
+								href="mailto:erickolivers93@gmail.com"
+								className="flex items-center gap-2 hover:underline hover:text-white w-fit"
+							>
+								<img
+									src="/icons/email.png"
+									alt="Gmail logo"
+									className="h-6"
+								/>
+								erickolivers93@gmail.com
+							</a>
+							<a
+								href="https://wa.me/351910485214"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="flex items-center gap-2 hover:underline hover:text-white w-fit"
+							>
+								<img
+									src="/icons/whatsapp.png"
+									alt="WhatsApp logo"
+									className="h-6"
+								/>
+								+351 910 485 214
+							</a>
 						</div>
-					</form>
+					</div>
+
+					<div className="border border-light-gray dark:border-white max-w-xl text-start p-6 bg-white dark:bg-white rounded-2xl">
+						<div className="text-3xl font-black dark:text-black">
+							Ready to Bring <br />
+							<span className="text-primary dark:text-primary">
+								Ideas
+							</span>{' '}
+							to Life?
+						</div>
+						<div className="w-[90%] my-1 dark:text-black">
+							Send me a message, and let’s talk about your project
+							or proposal. I’d love to chat!
+							<span className="text-primary dark:text-primary">
+								{' '}
+								If you’re around, let’s grab a coffee.
+							</span>
+						</div>
+						<form className="w-full mt-4 space-y-8">
+							<FloatingInput label="Name" id="name" />
+							<FloatingInput label="Surname" id="surname" />
+							<FloatingInput
+								label="Email"
+								id="email"
+								type="email"
+							/>
+							<FloatingInput
+								label="Message"
+								id="message"
+								type="textarea"
+							/>
+							<div className="flex justify-center items-center">
+								<Button type="submit">Send</Button>
+							</div>
+						</form>
+					</div>
 				</div>
 			</div>
 

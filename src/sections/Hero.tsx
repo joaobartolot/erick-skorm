@@ -4,7 +4,11 @@ import ScrollIndicator from '../components/ScrollIndicator'
 
 const Hero = () => {
 	return (
-		<header className="relative flex justify-center items-center h-screen w-full">
+		<header
+			id="hero"
+			className="relative flex justify-center items-center h-screen w-full"
+			data-section
+		>
 			<div className="relative text-8xl font-black text-start leading-14">
 				Designing
 				<br />

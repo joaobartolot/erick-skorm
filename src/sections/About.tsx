@@ -9,18 +9,18 @@ import Square from '../components/Square'
 
 const About = () => {
 	const [trigger, setTrigger] = useState(false)
-	const sectionRef = useRef<HTMLElement | null>(null)
+	const sectionRef = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			([entry]) => {
-				if (entry.intersectionRatio >= 0.2) {
+				if (entry.intersectionRatio >= 0.7) {
 					setTrigger(true)
 				} else {
 					setTrigger(false)
 				}
 			},
-			{ threshold: 0.2 }
+			{ threshold: 0.7 }
 		)
 
 		if (sectionRef.current) {
@@ -33,10 +33,13 @@ const About = () => {
 	return (
 		<section
 			id="about"
-			ref={sectionRef}
 			className="w-full flex flex-col justify-center items-center"
+			data-section
 		>
-			<div className="flex justify-center items-center w-full max-w-7xl py-8">
+			<div
+				ref={sectionRef}
+				className="flex justify-center items-center w-full max-w-7xl py-8"
+			>
 				<div className="aspect-square mx-20 pb-12">
 					<div className="relative aspect-square rotate-45">
 						<div className="rounded-[10%]  overflow-hidden">
@@ -49,8 +52,8 @@ const About = () => {
 								className="scale-140 -rotate-45"
 							/>
 						</div>
-						<Square className="absolute -bottom-[40px] translate-y-[100%] w-[90%] -z-10" />
-						<Square className="absolute left-[40px] -bottom-[50%] translate-x-[100%] w-[95%] -z-10" />
+						<Square className="absolute -bottom-[40px] translate-y-[100%] w-[100%] -z-10" />
+						<Square className="absolute -right-[40px] -bottom-[50%] translate-x-[100%] w-[100%] -z-10" />
 					</div>
 				</div>
 				<div className="flex flex-col text-start ml-24">

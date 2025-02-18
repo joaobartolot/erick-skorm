@@ -36,7 +36,7 @@ const AnimatedStroke: React.FC<AnimatedStrokeProps> = ({
 				strokeDasharray="200" // Total stroke length
 				initial={{ strokeDashoffset: 200 }} // Fully hidden
 				animate={controls}
-				transition={{ duration: 0.3, ease: 'easeInOut' }}
+				transition={{ duration: 0.5, ease: 'easeInOut' }}
 			/>
 		</svg>
 	)

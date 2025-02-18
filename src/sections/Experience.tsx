@@ -7,7 +7,7 @@ import { experiences } from '../data/experience'
 
 const Experience = () => {
 	const [trigger, setTrigger] = useState(false)
-	const sectionRef = useRef<HTMLElement | null>(null)
+	const sectionRef = useRef<HTMLDivElement | null>(null)
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -29,7 +29,7 @@ const Experience = () => {
 	}, [])
 
 	return (
-		<section id="experience" ref={sectionRef} className="relative w-full">
+		<section id="experience" className="relative w-full" data-section>
 			<div
 				className={twJoin(
 					'absolute top-0 -translate-y-[50%] -translate-x-[5%] w-[110%] pt-4 -rotate-3',
@@ -39,7 +39,10 @@ const Experience = () => {
 				<MarqueeTools />
 			</div>
 
-			<div className="flex flex-col justify-center items-center pt-24 w-full">
+			<div
+				ref={sectionRef}
+				className="flex flex-col justify-center items-center pt-24 w-full"
+			>
 				<div className="text-3xl font-black w-fit leading-0">
 					Experience
 					<AnimatedStroke

@@ -12,7 +12,7 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
 						top:
 							section.getBoundingClientRect().top +
 							window.scrollY -
-							80, // Offset for Navbar
+							80,
 						behavior: 'smooth',
 					})
 				}
@@ -23,7 +23,7 @@ const PageWrapper = ({ children }: { children: React.ReactNode }) => {
 		return () => document.removeEventListener('click', handleSmoothScroll)
 	}, [])
 
-	return <div className="text-white bg-black">{children}</div>
+	return <div>{children}</div>
 }
 
 export default PageWrapper

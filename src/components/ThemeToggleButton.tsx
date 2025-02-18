@@ -32,9 +32,9 @@ const ThemeToggleButton = () => {
 			className="cursor-pointer"
 		>
 			{theme === 'dark' ? (
-				<Sun className="w-8 aspect-square" />
+				<Sun className="w-7 md:w-8 aspect-square" />
 			) : (
-				<Moon className="w-8 aspect-square" />
+				<Moon className="w-7 md:w-8 aspect-square" />
 			)}
 		</button>
 	)

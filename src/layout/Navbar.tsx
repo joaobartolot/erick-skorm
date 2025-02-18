@@ -59,7 +59,7 @@ const Navbar = () => {
 
 	const topVariants = {
 		closed: { rotate: 0, y: 0 },
-		open: { rotate: 45, y: 8 },
+		open: { width: '100%', rotate: 45, y: 8 },
 	}
 
 	const middleVariants = {
@@ -114,39 +114,39 @@ const Navbar = () => {
 						'md:static md:w-fit'
 					)}
 				>
-					<Logo className="w-24 h-fit" />
+					<Logo className="w-18 md:w-24 h-fit" />
 				</div>
 				<button
 					className="z-50 flex h-6 w-8 flex-col justify-around md:hidden"
 					onClick={() => setIsOpen(!isOpen)}
 				>
 					<motion.span
-						className="h-[3px] w-full rounded-full bg-black dark:bg-white"
+						className="h-[3px] w-[60%] rounded-full bg-black dark:bg-white self-end"
 						variants={topVariants}
 						animate={isOpen ? 'open' : 'closed'}
 						transition={{ duration: 0.3 }}
 					/>
 
 					<motion.span
-						className="h-[3px] w-[80%] rounded-full bg-black dark:bg-white"
+						className="h-[3px] w-full rounded-full bg-black dark:bg-white"
 						variants={middleVariants}
 						animate={isOpen ? 'open' : 'closed'}
 						transition={{ duration: 0.3 }}
 					/>
 
 					<motion.span
-						className="h-[3px] w-[70%] rounded-full bg-black dark:bg-white"
+						className="h-[3px] w-[60%] rounded-full bg-black dark:bg-white"
 						variants={bottomVariants}
 						animate={isOpen ? 'open' : 'closed'}
 						transition={{ duration: 0.3 }}
 					/>
 				</button>
 
-				<div className="flex space-x-4 z-50">
+				<div className="flex items-center space-x-1 md:space-x-4 z-50">
 					<ThemeToggleButton />
 					<Button
 						onClick={() => scrollToElement('contact')}
-						className="text-sm md:text-base"
+						className="text-xs md:text-base px-4 py-2 md:px-4 md:py-3"
 					>
 						Hire me
 					</Button>

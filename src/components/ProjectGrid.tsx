@@ -55,6 +55,7 @@ const ProjectGrid = () => {
 							loading="lazy"
 							className={twJoin(
 								'object-cover h-full',
+								project.imageClass,
 								project.secondaryImage ? '' : 'max-h-[700px]'
 							)}
 						/>
@@ -76,14 +77,14 @@ const ProjectGrid = () => {
 					</div>
 
 					{project.secondaryImage && (
-						<div className="hidden md:block min-w-fit border-2 border-primary rounded-lg overflow-hidden">
+						<div className="w-[300px] h-[300px] aspect-square hidden md:block min-w-fit border-2 border-primary rounded-lg overflow-hidden">
 							<img
 								src={project.secondaryImage}
 								alt="Project preview"
 								height={300}
 								width={300}
 								loading="lazy"
-								className="min-w-[300px]"
+								className="w-full h-full"
 							/>
 						</div>
 					)}

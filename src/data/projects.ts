@@ -13,8 +13,7 @@ export const projects = [
 	{
 		id: 3,
 		primaryImage: '/images/ysl.png',
-		backgroundClass:
-			'bg-gradient-to-r from-[#4c3337] to-[#27201a] dark:from-[#4c3337]',
+		imageClass: 'w-full',
 		secondaryImage: '/images/ysl-secondary.png',
 		tools: {
 			icons: ['/icons/blender-light.png', '/icons/photoshop-light.png'],
@@ -23,7 +22,7 @@ export const projects = [
 		},
 	},
 	{
-		id: 3,
+		id: 4,
 		primaryImage: '/images/palato-nobre.png',
 		backgroundClass: 'bg-[#75462e] dark:bg-[#75462e]',
 		secondaryImage: '/images/palato-nobre-secondary.png',
@@ -35,6 +34,17 @@ export const projects = [
 	},
 	{
 		id: 5,
+		primaryImage: '/images/book.png',
+		imageClass: 'w-full',
+		secondaryImage: '/images/book-secondary.png',
+		tools: {
+			icons: ['/icons/photoshop-light.png'],
+			toolPrimary: 'Logo &',
+			toolSecondary: 'Branding',
+		},
+	},
+	{
+		id: 6,
 		primaryImage: '/images/bartolot-portfolio.png',
 		backgroundClass: 'bg-[#f23846] dark:bg-[#f23846]',
 		tools: {

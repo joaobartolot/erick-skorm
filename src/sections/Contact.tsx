@@ -103,9 +103,17 @@ const Contact = () => {
 			</div>
 
 			<div
-				className="absolute top-0 w-full h-[70%] -z-10"
+				className="absolute bg-center top-0 w-full h-[70%] -z-10"
 				style={{ backgroundImage: 'url(/images/contact-bg.png)' }}
-			></div>
+			>
+				<div className="relative w-full h-full">
+					<img
+						src="/images/phone-guy.png"
+						alt=""
+						className="absolute bottom-0 right-8 w-[40%]"
+					/>
+				</div>
+			</div>
 		</section>
 	)
 }

@@ -61,7 +61,7 @@ const FloatingInput: React.FC<FloatingInputProps> = ({
 			<label
 				htmlFor={id}
 				className={twMerge(
-					'absolute z-10 origin-[0] rounded-full bg-white dark:bg-black px-2 text-light-gray text-sm duration-300 transform start-1',
+					'absolute z-10 origin-[0] rounded-full bg-white dark:bg-white px-2 text-light-gray text-sm duration-300 transform start-1',
 					isFocused || value
 						? 'px-2 text-secondary top-1.5 scale-80 -translate-y-4'
 						: isTextarea

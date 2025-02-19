@@ -42,7 +42,7 @@ const EmailFeedbackModal: React.FC<EmailFeedbackModalProps> = ({
 
 	return (
 		<div
-			className="fixed inset-0 bg-black/30 flex justify-center items-center z-40"
+			className="fixed inset-0 bg-black/30 flex justify-center items-center z-40 px-12"
 			onClick={handleClose}
 		>
 			<motion.div
@@ -61,7 +61,7 @@ const EmailFeedbackModal: React.FC<EmailFeedbackModalProps> = ({
 					</div>
 				</button>
 				<div
-					className="bg-black/40 backdrop-blur-xl text-white font-bold py-12 px-24 rounded-2xl shadow-xl max-w-md w-full text-center"
+					className="flex flex-col justify-center items-center bg-black/40 backdrop-blur-xl text-white font-bold w-xs md:w-sm aspect-[4/3] rounded-2xl shadow-xl text-center"
 					onClick={e => e.stopPropagation()}
 				>
 					<img

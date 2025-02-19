@@ -45,7 +45,14 @@ const ProjectGrid = () => {
 									className="w-6"
 								/>
 							))}
-							<div className="text-xs leading-3">
+							<div
+								className={twJoin(
+									'text-xs leading-3',
+									project.secondaryImage
+										? 'font-normal'
+										: 'font-black'
+								)}
+							>
 								<div>{project.tools.toolPrimary}</div>
 								<div>{project.tools.toolSecondary}</div>
 							</div>
@@ -135,7 +142,7 @@ const ProjectGrid = () => {
 							height={36}
 							className="dark:hidden w-6"
 						/>
-						<div className="text-xs leading-3">
+						<div className="font-black text-xs leading-3">
 							<div>Landing Page</div>
 							<div>UX/UI</div>
 						</div>

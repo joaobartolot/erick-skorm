@@ -96,6 +96,7 @@ const Navbar = () => {
 	) => {
 		event.preventDefault()
 		scrollToElement(sectionId)
+		setIsOpen(false)
 	}
 
 	return (

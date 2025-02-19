@@ -1,3 +1,4 @@
+import { t } from 'i18next'
 import { twJoin } from 'tailwind-merge'
 import { projects } from '../data/projects'
 
@@ -83,7 +84,7 @@ const ProjectGrid = () => {
 											: 'border-primary text-primary hover:bg-primary'
 									)}
 								>
-									Check It Out
+									{t('projects.checkOut')}
 								</a>
 							</div>
 						)}
@@ -168,7 +169,7 @@ const ProjectGrid = () => {
 								''
 							)}
 						>
-							Check It Out
+							{t('projects.checkOut')}
 						</a>
 					</div>
 				</div>

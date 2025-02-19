@@ -53,12 +53,13 @@ const EmailFeedbackModal: React.FC<EmailFeedbackModalProps> = ({
 			>
 				<button
 					onClick={handleClose}
-					className="absolute top-5 right-8 z-50 text-4xl cursor-pointer"
+					className="absolute top-5 right-5 z-50 font-black text-2xl cursor-pointer"
 				>
-					<div className="relative">
-						<div className="absolute inset-0 h-0.75 w-4 bg-white rounded-full rotate-45" />
-						<div className="absolute inset-0 h-0.75 w-4 bg-white rounded-full -rotate-45" />
-					</div>
+					<img
+						src="/icons/multiply.png"
+						alt="Multiply icon"
+						className="w-5"
+					/>
 				</button>
 				<div
 					className="flex flex-col justify-center items-center bg-black/40 backdrop-blur-xl text-white font-bold w-xs md:w-sm aspect-[4/3] rounded-2xl shadow-xl text-center"

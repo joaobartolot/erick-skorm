@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { twJoin } from 'tailwind-merge'
+import { sendContactMessage } from '../api/sendContactMessage'
 import AnimatedStroke from '../components/AnimatedStroke'
 import Button from '../components/Button'
 import FloatingInput from '../components/FloatingInput'
@@ -10,6 +11,33 @@ const Contact = () => {
 	const [bgLoaded, setBgLoaded] = useState(false)
 	const [phoneGuyLoaded, setPhoneGuyLoaded] = useState(false)
 	const sectionRef = useRef<HTMLDivElement | null>(null)
+
+	const [formData, setFormData] = useState({
+		name: '',
+		surname: '',
+		email: '',
+		message: '',
+	})
+
+	const handleChange = (
+		e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
+		const { id, value } = e.target
+		setFormData(prevState => ({
+			...prevState,
+			[id]: value,
+		}))
+	}
+
+	const handleSubmit = async (e: React.FormEvent) => {
+		e.preventDefault()
+		try {
+			await sendContactMessage(formData)
+			alert('Message sent successfully!')
+		} catch {
+			alert('Failed to send message')
+		}
+	}
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -96,18 +124,35 @@ const Contact = () => {
 								If you’re around, let’s grab a coffee.
 							</span>
 						</div>
-						<form className="w-full mt-4 space-y-8 ">
-							<FloatingInput label="Name" id="name" />
-							<FloatingInput label="Surname" id="surname" />
+						<form
+							className="w-full mt-4 space-y-8 pointer-events-auto"
+							onSubmit={handleSubmit}
+						>
+							<FloatingInput
+								label="Name"
+								id="name"
+								value={formData.name}
+								onChange={handleChange}
+							/>
+							<FloatingInput
+								label="Surname"
+								id="surname"
+								value={formData.surname}
+								onChange={handleChange}
+							/>
 							<FloatingInput
 								label="Email"
 								id="email"
 								type="email"
+								value={formData.email}
+								onChange={handleChange}
 							/>
 							<FloatingInput
 								label="Message"
 								id="message"
 								type="textarea"
+								value={formData.message}
+								onChange={handleChange}
 							/>
 							<div className="flex justify-center items-center">
 								<Button type="submit">Send</Button>

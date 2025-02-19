@@ -78,6 +78,7 @@ const Experience = () => {
 
 				<Swiper
 					loop
+					freeMode
 					onSwiper={swiper => (swiperRef.current = swiper)}
 					onSlideChange={swiper => setActiveIndex(swiper.realIndex)}
 					breakpoints={{

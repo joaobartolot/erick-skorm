@@ -3,10 +3,15 @@ import { twJoin } from 'tailwind-merge'
 import { sendContactMessage } from '../api/sendContactMessage'
 import AnimatedStroke from '../components/AnimatedStroke'
 import Button from '../components/Button'
+import EmailFeedbackModal from '../components/EmailFeedbackModal'
 import FloatingInput from '../components/FloatingInput'
 import SocialIcons from '../components/SocialIcons'
+import useModal from '../hooks/useModal'
 
 const Contact = () => {
+	const { isOpen, openModal, closeModal } = useModal()
+	const [isSuccess, setIsSuccess] = useState(false)
+
 	const [trigger, setTrigger] = useState(false)
 	const [bgLoaded, setBgLoaded] = useState(false)
 	const [phoneGuyLoaded, setPhoneGuyLoaded] = useState(false)
@@ -29,13 +34,31 @@ const Contact = () => {
 		}))
 	}
 
+	const handleEmailSend = (success: boolean) => {
+		setIsSuccess(success)
+		openModal()
+	}
+
+	const handleClose = () => {
+		if (isSuccess) {
+			setFormData({
+				name: '',
+				surname: '',
+				email: '',
+				message: '',
+			})
+		}
+
+		closeModal()
+	}
+
 	const handleSubmit = async (e: React.FormEvent) => {
 		e.preventDefault()
 		try {
 			await sendContactMessage(formData)
-			alert('Message sent successfully!')
+			handleEmailSend(true)
 		} catch {
-			alert('Failed to send message')
+			handleEmailSend(false)
 		}
 	}
 
@@ -54,7 +77,6 @@ const Contact = () => {
 		return () => observer.disconnect()
 	}, [])
 
-	// Only show socials when both images are loaded
 	const showSocials = bgLoaded && phoneGuyLoaded
 
 	return (
@@ -229,6 +251,11 @@ const Contact = () => {
 					</div>
 				</div>
 			</div>
+			<EmailFeedbackModal
+				isOpen={isOpen}
+				onClose={handleClose}
+				isSuccess={isSuccess}
+			/>
 		</section>
 	)
 }

@@ -39,8 +39,8 @@ export const projects = [
 		secondaryImage: '/images/book-secondary.png',
 		tools: {
 			icons: ['/icons/photoshop-light.png'],
-			toolPrimary: 'Logo &',
-			toolSecondary: 'Branding',
+			toolPrimary: 'Brochure',
+			toolSecondary: 'Design',
 		},
 	},
 	{

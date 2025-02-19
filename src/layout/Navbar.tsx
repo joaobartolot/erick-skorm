@@ -185,6 +185,42 @@ const Navbar = () => {
 					</a>
 				</nav>
 			</div>
+			<motion.nav
+				initial={{ x: '-100%' }}
+				animate={{ x: isOpen ? 0 : '-100%' }}
+				exit={{ x: '-100%' }}
+				transition={{
+					type: 'tween',
+					duration: 0.4,
+					ease: 'easeOut',
+				}}
+				className={twJoin(
+					'md:hidden absolute top-0 left-0 overflow-hidden bg-white/5 backdrop-blur-sm',
+					'z-40 flex flex-col items-start space-y-6 py-24 pl-4 pr-24 rounded-br-[30px]'
+				)}
+			>
+				<a
+					href="#about"
+					onClick={e => handleAnchorClick(e, 'about')}
+					className="hover:text-primary transition-colors"
+				>
+					{t('navbar.about')}
+				</a>
+				<a
+					href="#experience"
+					onClick={e => handleAnchorClick(e, 'experience')}
+					className="hover:text-primary transition-colors"
+				>
+					{t('navbar.experience')}
+				</a>
+				<a
+					href="#projects"
+					onClick={e => handleAnchorClick(e, 'projects')}
+					className="hover:text-primary transition-colors"
+				>
+					{t('navbar.projects')}
+				</a>
+			</motion.nav>
 		</header>
 	)
 }

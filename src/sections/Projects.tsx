@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import AnimatedStroke from '../components/AnimatedStroke'
 import ProjectGrid from '../components/ProjectGrid'
 
 const Projects = () => {
+	const { t } = useTranslation()
 	const [trigger, setTrigger] = useState(false)
 	const sectionRef = useRef<HTMLDivElement | null>(null)
 
@@ -32,7 +34,7 @@ const Projects = () => {
 			data-section
 		>
 			<div className="text-3xl font-black w-fit leading-0 mb-12">
-				Projects
+				{t('projects.sectionTitle')}
 				<AnimatedStroke
 					className="w-full text-primary dark:text-primary"
 					trigger={trigger}

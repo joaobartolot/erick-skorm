@@ -1,13 +1,16 @@
 import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { twJoin } from 'tailwind-merge'
 import Logo from '../assets/images/logo.svg?react'
 import Button from '../components/Button'
+import LanguageSwitcher from '../components/LanguageSwitcher'
 import ThemeToggleButton from '../components/ThemeToggleButton'
 
 const offset = 80
 
 const Navbar = () => {
+	const { t } = useTranslation()
 	const [isOpen, setIsOpen] = useState(false)
 	const [frostHeader, setFrostHeader] = useState(false)
 	const headerRef = useRef<HTMLElement>(null)
@@ -142,13 +145,14 @@ const Navbar = () => {
 					/>
 				</button>
 
-				<div className="flex items-center space-x-1 md:space-x-4 z-50">
+				<div className="flex items-center gap-2 md:gap-4 z-50">
 					<ThemeToggleButton />
+					<LanguageSwitcher />
 					<Button
 						onClick={() => scrollToElement('contact')}
 						className="hidden md:block text-xs md:text-base px-4 py-2 md:px-4 md:py-3"
 					>
-						Hire me
+						{t('navbar.hireMe')}
 					</Button>
 				</div>
 
@@ -163,60 +167,24 @@ const Navbar = () => {
 						onClick={e => handleAnchorClick(e, 'about')}
 						className="hover:text-primary transition-colors"
 					>
-						About
+						{t('navbar.about')}
 					</a>
 					<a
 						href="#experience"
 						onClick={e => handleAnchorClick(e, 'experience')}
 						className="hover:text-primary transition-colors"
 					>
-						Experience
+						{t('navbar.experience')}
 					</a>
 					<a
 						href="#projects"
 						onClick={e => handleAnchorClick(e, 'projects')}
 						className="hover:text-primary transition-colors"
 					>
-						Projects
+						{t('navbar.projects')}
 					</a>
 				</nav>
 			</div>
-			<motion.nav
-				initial={{ x: '-100%' }}
-				animate={{ x: isOpen ? 0 : '-100%' }}
-				exit={{ x: '-100%' }}
-				transition={{
-					type: 'tween',
-					duration: 0.4,
-					ease: 'easeOut',
-				}}
-				className={twJoin(
-					'md:hidden absolute top-0 left-0 overflow-hidden bg-white/5 backdrop-blur-sm',
-					'z-40 flex flex-col items-start space-y-6 py-24 pl-4 pr-24 rounded-br-[30px]'
-				)}
-			>
-				<a
-					href="#about"
-					onClick={e => handleAnchorClick(e, 'about')}
-					className="hover:text-primary transition-colors"
-				>
-					About
-				</a>
-				<a
-					href="#experience"
-					onClick={e => handleAnchorClick(e, 'experience')}
-					className="hover:text-primary transition-colors"
-				>
-					Experience
-				</a>
-				<a
-					href="#projects"
-					onClick={e => handleAnchorClick(e, 'projects')}
-					className="hover:text-primary transition-colors"
-				>
-					Projects
-				</a>
-			</motion.nav>
 		</header>
 	)
 }

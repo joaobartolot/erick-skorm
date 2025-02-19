@@ -1,0 +1,81 @@
+{
+	"navbar": {
+		"hireMe": "Hire me",
+		"about": "About",
+		"experience": "Experience",
+		"projects": "Projects"
+	},
+	"hero": {
+		"title1": "Designing",
+		"title2": "with",
+		"title3": "purpose,",
+		"subtitle": "creating with passion",
+		"description": "Bringing clarity and creativity to every project. I focus on crafting impactful, functional designs that not only captivate but also solve real problems. Each design is driven by intention and fueled by passion.",
+		"button": "Hire me",
+		"diamondAlt": "Spinning diamond"
+	},
+	"diamondImage": {
+		"alt": "A classical marble statue of a man with curly hair, wearing modern red sunglasses and using a silver MacBook laptop. The statue has a thoughtful expression, with one hand raised as if making a point. The background is removed, creating a sleek, modern contrast between antiquity and technology."
+	},
+	"about": {
+		"sectionTitle": "About",
+		"greeting": "Hey,<br />What’s up?",
+		"introduction": "Let me introduce myself.",
+		"bio": "My name is Erick Silva, also known as Skorm. I’m Brazilian, currently based in Lisbon, and always seeking new experiences and challenges. Whether in my work or personal life, my mission is to learn and share what I can with the world around me.",
+		"backgroundTitle": "background",
+		"backgroundDescription": "I hold a Bachelor's degree in Advertising and Propaganda from Universidade Estácio de Sá, based in Rio de Janeiro, where I developed a strong foundation in marketing, communication, and creative strategy. In addition to my undergraduate studies, I pursued an MBA in Business Management and Strategy, which helped me gain a deeper understanding of corporate dynamics, leadership, and strategic planning. Furthermore, I completed a second postgraduate degree in Digital Product Design (UX/UI) at Faculdade Anhanguera, equipping me with advanced skills in user experience and interface design, focused on creating intuitive and impactful digital products.",
+		"pencilGuyAlt": "A classical-style marble statue wearing red sunglasses and holding a red pencil while reading a book, giving a modern and humorous academic aesthetic.",
+		"erickPortraitAlt": "Black and white portrait of Erick Skorm, a software developer, wearing a long-sleeved sweater and a smartwatch. He has short curly hair and a contemplative expression, gazing thoughtfully to the side with his hand resting on his chin. The background is plain and minimalistic."
+	},
+	"experience": {
+		"sectionTitle": "Experience",
+		"description": "With years of experience as an Art Director in advertising agencies, I have crafted campaigns, developed brands, and created compelling visuals. I’ve worked in Marketing, Content Creation, and Review, collaborating with two of the world's largest social networks. Now, I'm paving my way as a UI Designer, continuously growing and evolving in the field.",
+		"latestExperiences": "Latest experiences",
+		"additionalInfo": "In recent years, I’ve taken on various roles combining communication and technology. I worked as Customer Support for Facebook, assisting small and medium-sized businesses with paid traffic. I also served as Marketing Manager for a UK-based cosmetics company. Currently, I work as a Content Analyst for the world's largest video platform while continuing to take on freelance design projects."
+	},
+	"projects": {
+		"sectionTitle": "Projects"
+	},
+	"contact": {
+		"sectionTitle": "Contact",
+		"email": "erickolivers93@gmail.com",
+		"whatsapp": "+351 910 485 214",
+		"readyToBring": "Ready to Bring <br /><span class='text-primary dark:text-primary'>Ideas</span> to Life?",
+		"messagePrompt": "Send me a message, and let’s talk about your project or proposal. I’d love to chat!<span class='text-primary dark:text-primary'> If you’re around, let’s grab a coffee.</span>",
+		"form": {
+			"name": "Name",
+			"surname": "Surname",
+			"email": "Email",
+			"message": "Message",
+			"send": "Send"
+		},
+		"letsGetSocial": "Let’s Get Social!"
+	},
+	"experiences": [
+		{
+			"logo": "/images/cria-livre.png",
+			"company": "Cria Livre",
+			"industry": "Agency",
+			"role": "Art Director",
+			"description": "At Cria Livre, a pioneering agency in open-source software, I officially began my journey as a Designer. Over two years, starting in 2013, I gained expertise in tools like GIMP, Inkscape, and Blender, working on creative projects that embraced innovation and flexibility."
+		},
+		{
+			"logo": "/images/via-carioca.png",
+			"company": "Via Carioca",
+			"industry": "Agency",
+			"role": "Art Director",
+			"description": "At Via Carioca, a creative agency in Niterói, RJ, I worked as an Art Director for two years, starting in 2017. I was responsible for developing visual identities, designing advertising campaigns, and creating engaging marketing materials to enhance brand communication."
+		},
+		{
+			"logo": "/images/skorm-logo.png",
+			"company": "Skorm",
+			"industry": "Studio",
+			"role": "Freelancer",
+			"description": "In 2019, I decided to work independently. I sought clients across Brazil, providing services as a Graphic Designer, Motion Designer, Video Editor, and Social Media specialist. Throughout this journey, I collaborated with various companies, delivering impactful visual and digital content."
+		}
+	],
+	"footer": {
+		"designedBy": "Designed by: Erick Skorm",
+		"builtBy": "Built by João Bartolot | © 2025"
+	}
+}

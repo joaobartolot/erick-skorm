@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { Swiper as SwiperCore } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { twJoin } from 'tailwind-merge'
@@ -6,13 +7,23 @@ import AnimatedStroke from '../components/AnimatedStroke'
 import ExperienceCard from '../components/ExperienceCard'
 import MarqueeTools from '../components/MarqueeTools'
 import Pagination from '../components/Pagination'
-import { experiences } from '../data/experience'
 
 const Experience = () => {
+	const { t } = useTranslation()
 	const [trigger, setTrigger] = useState(false)
 	const [activeIndex, setActiveIndex] = useState(0)
 	const sectionRef = useRef<HTMLDivElement | null>(null)
 	const swiperRef = useRef<SwiperCore | null>(null)
+
+	const experiences = t('experiences', {
+		returnObjects: true,
+	}) as unknown as Array<{
+		logo: string
+		company: string
+		industry: string
+		role: string
+		description: string
+	}>
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -46,7 +57,7 @@ const Experience = () => {
 
 			<div className="flex flex-col justify-center items-center pt-24 w-full">
 				<div className="text-3xl font-black w-fit leading-0">
-					Experience
+					{t('experience.sectionTitle')}
 					<AnimatedStroke
 						className="w-full text-primary dark:text-primary"
 						trigger={trigger}
@@ -56,17 +67,12 @@ const Experience = () => {
 					ref={sectionRef}
 					className="max-w-prose text-center md:text-start mt-8 px-6 md:px-0"
 				>
-					With years of experience as an Art Director in advertising
-					agencies, I have crafted campaigns, developed brands, and
-					created compelling visuals. I’ve worked in Marketing,
-					Content Creation, and Review, collaborating with two of the
-					world's largest social networks. Now, I'm paving my way as a
-					UI Designer, continuously growing and evolving in the field.
+					{t('experience.description')}
 				</div>
 
 				<div className="flex justify-center md:justify-between items-center w-full max-w-7xl mb-12 my-24">
 					<div className="p-4 md:p-2 rounded-lg w-fit h-fit text-xl md:text-base font-black md:font-normal whitespace-nowrap bg-primary dark:bg-primary text-white dark:text-white">
-						Latest experiences
+						{t('experience.latestExperiences')}
 					</div>
 					<div className="hidden md:block w-full h-[1px] mx-6 bg-primary dark:bg-primary" />
 					<img
@@ -115,13 +121,7 @@ const Experience = () => {
 				/>
 
 				<div className="max-w-7xl px-6 my-12">
-					In recent years, I’ve taken on various roles combining
-					communication and technology. I worked as Customer Support
-					for Facebook, assisting small and medium-sized businesses
-					with paid traffic. I also served as Marketing Manager for a
-					UK-based cosmetics company. Currently, I work as a Content
-					Analyst for the world's largest video platform while
-					continuing to take on freelance design projects.
+					{t('experience.additionalInfo')}
 				</div>
 			</div>
 		</section>

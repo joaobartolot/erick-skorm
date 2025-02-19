@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { twJoin } from 'tailwind-merge'
 import { sendContactMessage } from '../api/sendContactMessage'
 import AnimatedStroke from '../components/AnimatedStroke'
@@ -9,9 +10,9 @@ import SocialIcons from '../components/SocialIcons'
 import useModal from '../hooks/useModal'
 
 const Contact = () => {
+	const { t } = useTranslation()
 	const { isOpen, openModal, closeModal } = useModal()
 	const [isSuccess, setIsSuccess] = useState(false)
-
 	const [trigger, setTrigger] = useState(false)
 	const [bgLoaded, setBgLoaded] = useState(false)
 	const [phoneGuyLoaded, setPhoneGuyLoaded] = useState(false)
@@ -48,7 +49,6 @@ const Contact = () => {
 				message: '',
 			})
 		}
-
 		closeModal()
 	}
 
@@ -89,7 +89,7 @@ const Contact = () => {
 			<div className="w-full max-w-7xl py-12 pb-32 z-10 pointer-events-none px-6">
 				<div className="flex flex-col w-full pointer-events-none">
 					<div className="flex flex-col items-center md:items-start text-2xl md:text-3xl font-black leading-0 text-center md:text-start w-full md:w-fit text-white dark:text-white">
-						Contact
+						{t('contact.sectionTitle')}
 						<AnimatedStroke
 							className="w-32 text-primary dark:text-primary"
 							strokeWidth={5}
@@ -127,75 +127,57 @@ const Contact = () => {
 
 					<div
 						className={twJoin(
-							'relative border border-light-gray w-full max-w-xl',
-							'text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
+							'relative border border-light-gray w-full max-w-xl text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
 						)}
 					>
-						<div className="text-xl md:text-3xl font-black dark:text-black">
-							Ready to Bring <br />
-							<span className="text-primary dark:text-primary">
-								Ideas
-							</span>{' '}
-							to Life?
-						</div>
-						<div className="w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base">
-							Send me a message, and let’s talk about your project
-							or proposal. I’d love to chat!
-							<span className="text-primary dark:text-primary">
-								{' '}
-								If you’re around, let’s grab a coffee.
-							</span>
-						</div>
+						<div
+							className="text-xl md:text-3xl font-black dark:text-black"
+							dangerouslySetInnerHTML={{
+								__html: t('contact.readyToBring'),
+							}}
+						/>
+						<div
+							className="w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base"
+							dangerouslySetInnerHTML={{
+								__html: t('contact.messagePrompt'),
+							}}
+						/>
 						<form
 							className="w-full mt-4 space-y-8 pointer-events-auto"
 							onSubmit={handleSubmit}
 						>
 							<FloatingInput
-								label="Name"
+								label={t('contact.form.name')}
 								id="name"
 								value={formData.name}
 								onChange={handleChange}
 							/>
 							<FloatingInput
-								label="Surname"
+								label={t('contact.form.surname')}
 								id="surname"
 								value={formData.surname}
 								onChange={handleChange}
 							/>
 							<FloatingInput
-								label="Email"
+								label={t('contact.form.email')}
 								id="email"
 								type="email"
 								value={formData.email}
 								onChange={handleChange}
 							/>
 							<FloatingInput
-								label="Message"
+								label={t('contact.form.message')}
 								id="message"
 								type="textarea"
 								value={formData.message}
 								onChange={handleChange}
 							/>
 							<div className="flex justify-center items-center">
-								<Button type="submit">Send</Button>
+								<Button type="submit">
+									{t('contact.form.send')}
+								</Button>
 							</div>
 						</form>
-
-						{showSocials && (
-							<div
-								className={twJoin(
-									'md:hidden absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
-									'w-fit pt-6 z-40 pointer-events-auto'
-								)}
-							>
-								<div className="text-nowrap text-2xl font-black">
-									Let’s Get Social!
-								</div>
-								<div className="w-full">
-									<SocialIcons />
-								</div>
-							</div>
-						)}
 					</div>
 				</div>
 			</div>
@@ -209,7 +191,6 @@ const Contact = () => {
 					backgroundPosition: 'center',
 				}}
 			>
-				{/* Hidden img tag to track when it loads */}
 				<img
 					src="/images/contact-bg.png"
 					alt="Background"
@@ -221,7 +202,6 @@ const Contact = () => {
 				<div className="hidden md:block relative w-full h-full">
 					<div className="absolute bottom-0 right-12 h-[70%]">
 						<div className="relative h-full">
-							{/* Phone Guy Image */}
 							<img
 								src="/images/phone-guy.png"
 								alt="Phone Guy"
@@ -231,26 +211,19 @@ const Contact = () => {
 								onLoad={() => setPhoneGuyLoaded(true)}
 							/>
 
-							{/* Show Social Icons only when both images are loaded */}
 							{showSocials && (
-								<div
-									className={twJoin(
-										'absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
-										'w-fit pt-12 z-20'
-									)}
-								>
+								<div className="absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%] w-fit pt-12 z-20">
 									<div className="text-2xl font-black">
-										Let’s Get Social!
+										{t('contact.letsGetSocial')}
 									</div>
-									<div className="w-full">
-										<SocialIcons />
-									</div>
+									<SocialIcons />
 								</div>
 							)}
 						</div>
 					</div>
 				</div>
 			</div>
+
 			<EmailFeedbackModal
 				isOpen={isOpen}
 				onClose={handleClose}

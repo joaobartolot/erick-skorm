@@ -1,6 +1,5 @@
 import { twJoin } from 'tailwind-merge'
 import { projects } from '../data/projects'
-import Button from './Button'
 
 const ProjectGrid = () => {
 	return (
@@ -64,16 +63,21 @@ const ProjectGrid = () => {
 
 						{project.projectLink && (
 							<div className="my-6">
-								<Button
-									variant="outline"
+								<a
+									href={project.projectLink}
+									target="_blank"
+									rel="noopener noreferrer"
 									className={twJoin(
+										'bg-transparent border-2  hover:text-white',
+										'rounded-md px-4 py-3 text-base font-semibold',
+										'transition duration-300 disabled:cursor-auto',
 										project.bgLight
 											? 'border-black text-black'
-											: ''
+											: 'border-primary text-primary hover:bg-primary'
 									)}
 								>
 									Check It Out
-								</Button>
+								</a>
 							</div>
 						)}
 					</div>
@@ -146,7 +150,19 @@ const ProjectGrid = () => {
 						className="px-6 md:px-0 z-10"
 					/>
 					<div className="my-6 z-10">
-						<Button variant="primary">Check It Out</Button>
+						<a
+							href="https://mr-gula.vercel.app/"
+							target="_blank"
+							rel="noopener noreferrer"
+							className={twJoin(
+								'bg-primary  hover:bg-secondary text-white',
+								'rounded-md px-4 py-3 text-base font-semibold',
+								'transition duration-300 disabled:cursor-auto',
+								''
+							)}
+						>
+							Check It Out
+						</a>
 					</div>
 				</div>
 			</div>

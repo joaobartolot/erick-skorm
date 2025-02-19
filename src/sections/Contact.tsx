@@ -127,7 +127,8 @@ const Contact = () => {
 
 					<div
 						className={twJoin(
-							'relative border border-light-gray w-full max-w-xl text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
+							'relative border border-light-gray w-full max-w-xl',
+							'text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
 						)}
 					>
 						<div
@@ -178,6 +179,19 @@ const Contact = () => {
 								</Button>
 							</div>
 						</form>
+						<div
+							className={twJoin(
+								'md:hidden absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
+								'w-fit pt-6 z-40 pointer-events-auto'
+							)}
+						>
+							<div className="text-nowrap text-2xl font-black">
+								{t('contact.letsGetSocial')}
+							</div>
+							<div className="w-full">
+								<SocialIcons />
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -78,5 +78,16 @@
 	"footer": {
 		"designedBy": "Design por: Erick Skorm",
 		"builtBy": "Desenvolvido por João Bartolot | © 2025"
+	},
+	"emailFeedbackModal": {
+		"altSuccess": "Mão fazendo OK",
+		"altError": "Polegar para baixo",
+		"titleSuccess": "Pronto!",
+		"titleError": "Oops!",
+		"messageSuccess": "Sua mensagem está a caminho.",
+		"messageError": "Algo deu errado.",
+		"thankYou": "Obrigado!",
+		"tryAgain": "Tente novamente ou entre em contato pelo e-mail",
+		"email": "erickolivers93@gmail.com"
 	}
 }

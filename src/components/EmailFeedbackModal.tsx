@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import React, { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface EmailFeedbackModalProps {
 	isOpen: boolean
@@ -12,6 +13,7 @@ const EmailFeedbackModal: React.FC<EmailFeedbackModalProps> = ({
 	onClose,
 	isSuccess,
 }) => {
+	const { t } = useTranslation()
 	const [isClosing, setIsClosing] = useState(false)
 
 	useEffect(() => {
@@ -71,29 +73,41 @@ const EmailFeedbackModal: React.FC<EmailFeedbackModalProps> = ({
 								? '/icons/ok-hand.png'
 								: '/icons/thumbs-down.png'
 						}
-						alt={isSuccess ? 'OK hand' : 'Thumbs down'}
+						alt={t(
+							isSuccess
+								? 'emailFeedbackModal.altSuccess'
+								: 'emailFeedbackModal.altError'
+						)}
 						className="w-10 py-4 mx-auto"
 					/>
 					<h2 className="text-4xl">
-						{isSuccess ? 'Got it!' : 'Oops!'}
+						{t(
+							isSuccess
+								? 'emailFeedbackModal.titleSuccess'
+								: 'emailFeedbackModal.titleError'
+						)}
 					</h2>
 					<p className="py-2">
-						{isSuccess
-							? 'Your message is on its way.'
-							: 'Something went wrong.'}
+						{t(
+							isSuccess
+								? 'emailFeedbackModal.messageSuccess'
+								: 'emailFeedbackModal.messageError'
+						)}
 					</p>
 
 					{isSuccess ? (
-						<span className="text-primary">Thank you!</span>
+						<span className="text-primary">
+							{t('emailFeedbackModal.thankYou')}
+						</span>
 					) : (
 						<p>
-							Try again or contact us at
+							{t('emailFeedbackModal.tryAgain')}
 							<br />
 							<a
-								href="mailto:erickolivers93@gmail.com"
+								href={`mailto:${t('emailFeedbackModal.email')}`}
 								className="text-primary hover:text-secondary hover:underline"
 							>
-								erickolivers93@gmail.com
+								{t('emailFeedbackModal.email')}
 							</a>
 						</p>
 					)}

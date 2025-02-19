@@ -22,9 +22,9 @@ const ExperienceCard = ({
 						alt={`${company} logo`}
 						className="h-[96px] aspect-square"
 					/>
-					<div className="text-start text-2xl font-black">
-						<div>{company}</div>
-						<div>{industry}</div>
+					<div className="text-start text-2xl">
+						<div className="font-black leading-5">{company}</div>
+						<div className="font-normal">{industry}</div>
 						<div className="text-primary font-light">{role}</div>
 					</div>
 				</div>

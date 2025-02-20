@@ -49,7 +49,7 @@ const Experience = () => {
 			<div
 				className={twJoin(
 					'absolute top-0 -translate-y-[50%] -translate-x-[5%] w-[110%] pt-4 -rotate-3',
-					'bg-gradient-to-t from-black/60 from-70% md:from-80% to-transparent dark:from-black '
+					'bg-gradient-to-t from-black/50 from-70% md:from-40% dark:md:from-80% to-transparent dark:from-black'
 				)}
 			>
 				<MarqueeTools />

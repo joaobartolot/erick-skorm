@@ -59,7 +59,7 @@ const Hero = () => {
 					</Button>
 				</div>
 			</div>
-			<div className="relative w-[300px] md:min-w-[300px] lg:min-w-[520px] md:m-[2%] m-12">
+			<div className="relative w-[300px] md:w-[300px] lg:w-[520px] aspect-square md:m-[2%] m-12">
 				<DiamondImage />
 			</div>
 			<ScrollIndicator />

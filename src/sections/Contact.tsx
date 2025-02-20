@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { twJoin } from 'tailwind-merge'
 import { sendContactMessage } from '../api/sendContactMessage'
+import AnimatedImage from '../components/AnimatedImage'
 import AnimatedStroke from '../components/AnimatedStroke'
 import Button from '../components/Button'
 import EmailFeedbackModal from '../components/EmailFeedbackModal'
@@ -87,7 +88,7 @@ const Contact = () => {
 			className="relative flex justify-center w-full"
 		>
 			<div className="w-full max-w-7xl py-12 pb-32 z-10 pointer-events-none px-6">
-				<div className="flex flex-col w-full pointer-events-none">
+				<div className="flex flex-col items-center md:items-start w-full pointer-events-none">
 					<div className="flex flex-col items-center md:items-start text-2xl md:text-3xl font-black leading-0 text-center md:text-start w-full md:w-fit text-white dark:text-white">
 						{t('contact.sectionTitle')}
 						<AnimatedStroke
@@ -96,53 +97,78 @@ const Contact = () => {
 							trigger={trigger}
 						/>
 					</div>
-					<div className="flex flex-col text-start text-xl my-6 gap-4 text-white dark:text-white pointer-events-auto">
-						<div className="flex flex-col items-center md:items-start gap-2">
-							<a
-								href="mailto:erickolivers93@gmail.com"
-								className="flex items-center gap-2 hover:underline hover:text-white w-fit"
-							>
-								<img
-									src="/icons/email.png"
-									alt="Gmail logo"
-									className="h-6 hidden md:block"
-								/>
-								erickolivers93@gmail.com
-							</a>
-							<a
-								href="https://wa.me/351910485214"
-								target="_blank"
-								rel="noopener noreferrer"
-								className="flex items-center gap-2 hover:underline hover:text-white w-fit"
-							>
-								<img
-									src="/icons/whatsapp.png"
-									alt="WhatsApp logo"
-									className="h-6 hidden md:block"
-								/>
-								+351 910 485 214
-							</a>
-						</div>
+					<div className="flex flex-col items-center md:items-start my-6 gap-2 text-white dark:text-white pointer-events-auto">
+						<a
+							href="mailto:erickolivers93@gmail.com"
+							className="flex text-base gap-2 hover:underline hover:text-white w-fit"
+						>
+							<img
+								src="/icons/email.png"
+								alt="Gmail logo"
+								className="h-6 hidden md:block"
+							/>
+							erickolivers93@gmail.com
+						</a>
+						<a
+							href="https://wa.me/351910485214"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="flex text-base gap-2 hover:underline hover:text-white w-fit"
+						>
+							<img
+								src="/icons/whatsapp.png"
+								alt="WhatsApp logo"
+								className="h-6 hidden md:block"
+							/>
+							+351 910 485 214
+						</a>
 					</div>
 
 					<div
 						className={twJoin(
-							'relative border border-light-gray w-full max-w-xl',
-							'text-center md:text-start p-6 bg-white dark:bg-white rounded-2xl'
+							'relative border md:max-lg:border-0 border-light-gray w-full max-w-xl',
+							'text-center md:text-start p-6 bg-white dark:bg-white',
+							'rounded-2xl md:max-lg:rounded-tl-none md:max-lg:mt-48',
+							'md:max-lg:self-center'
 						)}
 					>
 						<div
-							className="text-xl md:text-3xl font-black dark:text-black"
-							dangerouslySetInnerHTML={{
-								__html: t('contact.readyToBring'),
-							}}
+							className={twJoin(
+								'static md:max-lg:absolute top-0 left-0 md:max-lg:-translate-y-[100%]',
+								'bg-white rounded-t-2xl border-0 md:max-lg:w-[280px] z-20'
+							)}
+						>
+							<div className="relative flex flex-col justify-center items-center md:items-start p-6">
+								<div
+									className={twJoin(
+										'absolute -bottom-[2px] right-[2px] translate-x-[32px] w-[32px] h-[32px] bg-primary rounded-full',
+										'bg-transparent shadow-[-10px_0_0_0_var(--color-white)] -rotate-45'
+									)}
+								/>
+								<div
+									className="text-xl lg:text-3xl font-black dark:text-black max-w-fit"
+									dangerouslySetInnerHTML={{
+										__html: t('contact.readyToBring'),
+									}}
+								/>
+								<div
+									className="w-[100%] md:max-lg:w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base"
+									dangerouslySetInnerHTML={{
+										__html: t('contact.messagePrompt'),
+									}}
+								/>
+							</div>
+						</div>
+						<AnimatedImage
+							src="/images/phone-guy.png"
+							alt="Phone Guy"
+							height={500}
+							className={twJoin(
+								'hidden md:block lg:hidden absolute top-0 right-0 -translate-y-[100%] z-10 pr-6',
+								'w-[300px]'
+							)}
 						/>
-						<div
-							className="w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base"
-							dangerouslySetInnerHTML={{
-								__html: t('contact.messagePrompt'),
-							}}
-						/>
+
 						<form
 							className="w-full mt-4 space-y-8 pointer-events-auto"
 							onSubmit={handleSubmit}
@@ -181,7 +207,7 @@ const Contact = () => {
 						</form>
 						<div
 							className={twJoin(
-								'md:hidden absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
+								'lg:hidden absolute bottom-0 right-1/2 translate-x-1/2 translate-y-[100%]',
 								'w-fit pt-6 z-40 pointer-events-auto'
 							)}
 						>
@@ -198,7 +224,7 @@ const Contact = () => {
 
 			{/* Background Image */}
 			<div
-				className="absolute bg-center top-0 w-full h-[30%] md:h-[70%] z-0"
+				className="absolute bg-center top-0 w-full h-[30%] md:h-[40%] lg:h-[70%] z-0"
 				style={{
 					backgroundImage: `url(/images/contact-bg.png)`,
 					backgroundSize: 'cover',
@@ -213,15 +239,14 @@ const Contact = () => {
 					onLoad={() => setBgLoaded(true)}
 				/>
 
-				<div className="hidden md:block relative w-full h-full">
-					<div className="absolute bottom-0 right-12 h-[70%]">
+				<div className="hidden lg:block relative w-full h-full">
+					<div className="absolute bottom-0 lg:right-4 xl:right-12 lg:h-[60%] xl:h-[70%]">
 						<div className="relative h-full">
-							<img
+							<AnimatedImage
 								src="/images/phone-guy.png"
 								alt="Phone Guy"
 								height={500}
-								className="h-full"
-								loading="lazy"
+								className="h-full hidden lg:block"
 								onLoad={() => setPhoneGuyLoaded(true)}
 							/>
 

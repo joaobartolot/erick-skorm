@@ -1,9 +1,9 @@
-import { motion } from 'framer-motion'
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import MortarboardLight from '../assets/icons/Mortarboard-light.svg?react'
 import Mortarboard from '../assets/icons/Mortarboard.svg?react'
 import Academic from '../assets/images/academic.svg?react'
+import AnimatedImage from '../components/AnimatedImage'
 import AnimatedStroke from '../components/AnimatedStroke'
 import DownloadCV from '../components/DownloadCV'
 import Square from '../components/Square'
@@ -53,13 +53,12 @@ const About = () => {
 					className="aspect-square m-20 md:my-0 pb-12"
 				>
 					<div className="relative aspect-square rotate-45">
-						<div className="rounded-[10%] overflow-hidden">
-							<img
+						<div className="rounded-[10%] overflow-hidden w-[250px] md:w-[300px] lg:w-[400px] aspect-square">
+							<AnimatedImage
+								width={400}
+								height={400}
 								src="/images/erick-skorm.png"
 								alt={t('about.erickPortraitAlt')}
-								width="400"
-								height="400"
-								loading="lazy"
 								className="scale-140 -rotate-45"
 							/>
 						</div>
@@ -68,7 +67,7 @@ const About = () => {
 					</div>
 				</div>
 
-				<div className="flex flex-col text-center md:text-start md:ml-24 px-6">
+				<div className="flex flex-col text-center md:text-start lg:ml-24 px-6">
 					<div className="hidden md:block text-3xl font-black leading-0 text-start w-fit">
 						{t('about.sectionTitle')}
 						<AnimatedStroke
@@ -109,8 +108,8 @@ const About = () => {
 						{t('about.backgroundDescription')}
 					</div>
 				</div>
-				<div className="relative self-end">
-					<motion.img
+				<div className="relative md:self-end md:w-[600px]">
+					<AnimatedImage
 						initial={{ opacity: 0, y: 20 }}
 						animate={{ opacity: 1, y: 0 }}
 						transition={{ duration: 0.5, ease: 'easeInOut' }}
@@ -118,7 +117,6 @@ const About = () => {
 						height="525"
 						src="/images/pencil-guy.png"
 						alt={t('about.pencilGuyAlt')}
-						loading="lazy"
 					/>
 					<img
 						src="/images/diamond.png"

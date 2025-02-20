@@ -112,13 +112,17 @@ const Navbar = () => {
 		>
 			<div className="relative flex w-full items-center justify-between">
 				<div
-					onClick={() => window.scrollTo(0, 0)}
 					className={twJoin(
-						'absolute inset-0 z-40 flex h-full w-full items-center justify-center cursor-pointer',
+						'absolute inset-0 z-40 flex h-full w-full items-center justify-center',
 						'md:static md:w-fit'
 					)}
 				>
-					<Logo className="w-18 md:w-24 h-fit" />
+					<button
+						onClick={() => window.scrollTo(0, 0)}
+						className="cursor-pointer"
+					>
+						<Logo className="w-18 md:w-24 h-fit" />
+					</button>
 				</div>
 				<button
 					className="z-50 flex h-6 w-8 flex-col justify-around md:hidden"

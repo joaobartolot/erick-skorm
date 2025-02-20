@@ -146,13 +146,13 @@ const Contact = () => {
 									)}
 								/>
 								<div
-									className="text-xl lg:text-3xl font-black dark:text-black max-w-fit"
+									className="text-xl lg:text-3xl font-black text-black dark:text-black max-w-fit"
 									dangerouslySetInnerHTML={{
 										__html: t('contact.readyToBring'),
 									}}
 								/>
 								<div
-									className="w-[100%] md:max-lg:w-[100%] lg:w-[90%] my-1 dark:text-black text-xs lg:text-base"
+									className="w-[100%] md:max-lg:w-[100%] lg:w-[90%] my-1 text-black dark:text-black text-xs lg:text-base"
 									dangerouslySetInnerHTML={{
 										__html: t('contact.messagePrompt'),
 									}}

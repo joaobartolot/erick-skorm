@@ -102,16 +102,16 @@ const About = () => {
 				<div className="flex flex-col items-center md:items-start text-center md:text-start max-w-[400px] text-sm px-6 py-8">
 					<Mortarboard className="hidden dark:block w-[72px] h-[72px] aspect-square object-cover" />
 					<MortarboardLight className="dark:hidden w-[72px] h-[72px] aspect-square object-cover" />
-					<div className="flex flex-col items-center md:items-start">
+					<div className="flex flex-col items-center md:items-start mb-6">
 						{isEnglish ? (
 							<Academic className="h-[48px] w-fit" />
 						) : (
-							<Formacao className="h-[56px] w-fit" />
+							<Formacao className="pl-2 h-[56px] w-fit" />
 						)}
 						<div
 							className={twJoin(
 								'text-6xl font-black',
-								!isEnglish ? 'leading-12' : ''
+								!isEnglish ? 'leading-8 tracking-tighter' : ''
 							)}
 						>
 							{t('about.backgroundTitle')}

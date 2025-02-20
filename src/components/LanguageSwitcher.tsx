@@ -13,7 +13,7 @@ export default function LanguageSwitcher() {
 	return (
 		<button
 			onClick={toggleLanguage}
-			className="text-sm font-semibold transition-colors"
+			className="text-sm font-semibold transition-colors cursor-pointer"
 		>
 			<span className={isEnglish ? 'text-primary' : ''}>EN</span> /
 			<span className={!isEnglish ? 'text-primary' : ''}> PT</span>

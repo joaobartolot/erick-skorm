@@ -1,14 +1,18 @@
 import { useEffect, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { twJoin } from 'tailwind-merge'
 import MortarboardLight from '../assets/icons/Mortarboard-light.svg?react'
 import Mortarboard from '../assets/icons/Mortarboard.svg?react'
 import Academic from '../assets/images/academic.svg?react'
+import Formacao from '../assets/images/formacao.svg?react'
 import AnimatedImage from '../components/AnimatedImage'
 import AnimatedStroke from '../components/AnimatedStroke'
 import DownloadCV from '../components/DownloadCV'
 import Square from '../components/Square'
+import { useCurrentLanguage } from '../hooks/useCurrentLanguage'
 
 const About = () => {
+	const { isEnglish } = useCurrentLanguage()
 	const { t } = useTranslation()
 	const [trigger, setTrigger] = useState(false)
 	const sectionRef = useRef<HTMLDivElement | null>(null)
@@ -99,8 +103,17 @@ const About = () => {
 					<Mortarboard className="hidden dark:block w-[72px] h-[72px] aspect-square object-cover" />
 					<MortarboardLight className="dark:hidden w-[72px] h-[72px] aspect-square object-cover" />
 					<div className="flex flex-col items-center md:items-start">
-						<Academic className="h-[48px] w-fit" />
-						<div className="text-6xl font-black">
+						{isEnglish ? (
+							<Academic className="h-[48px] w-fit" />
+						) : (
+							<Formacao className="h-[56px] w-fit" />
+						)}
+						<div
+							className={twJoin(
+								'text-6xl font-black',
+								!isEnglish ? 'leading-12' : ''
+							)}
+						>
 							{t('about.backgroundTitle')}
 						</div>
 					</div>

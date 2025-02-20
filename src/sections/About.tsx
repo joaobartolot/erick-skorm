@@ -39,7 +39,7 @@ const About = () => {
 	return (
 		<section
 			id="about"
-			className="w-full flex flex-col justify-center items-center pt-32"
+			className="w-full flex flex-col justify-center items-center pt-24"
 			data-section
 		>
 			<div className="flex flex-col md:flex-row justify-center items-center w-full max-w-7xl py-8">

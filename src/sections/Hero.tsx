@@ -26,7 +26,7 @@ const Hero = () => {
 	return (
 		<header
 			id="hero"
-			className="relative flex flex-col md:flex-row justify-start md:justify-center items-center h-screen w-full "
+			className="relative flex flex-col md:flex-row justify-start md:justify-center items-center min-h-screen w-full"
 			data-section
 		>
 			<div className="relative text-6xl md:text-8xl font-black text-start px-12 md:px-0 mt-[92px] md:mt-0 max-w-md ">

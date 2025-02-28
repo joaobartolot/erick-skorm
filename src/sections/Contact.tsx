@@ -141,8 +141,8 @@ const Contact = () => {
 							<div className="relative flex flex-col justify-center items-center md:items-start p-6">
 								<div
 									className={twJoin(
-										'absolute -bottom-[2px] right-[2px] translate-x-[32px] w-[32px] h-[32px] bg-primary rounded-full',
-										'bg-transparent shadow-[-10px_0_0_0_var(--color-white)] -rotate-45'
+										'absolute bottom-0 right-0 translate-x-[100%] w-[100%] h-[50%] bg-transparent rounded-bl-2xl',
+										'shadow-[-10px_0_0_0_var(--color-white)]'
 									)}
 								/>
 								<div
